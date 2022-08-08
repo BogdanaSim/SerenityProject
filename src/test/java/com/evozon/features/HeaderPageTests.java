@@ -27,4 +27,11 @@ public class HeaderPageTests {
         headerPageSteps.clickOnHomepageLogo();
         homePageSteps.checkTitleHomePage();
     }
+
+    @Test
+    public void changeLanguage(){
+        homePageSteps.navigateToHomepage();
+        headerPageSteps.clickOnLanguageOption("French");
+        headerPageSteps.verifyLanguagePage("French");
+    }
 }
