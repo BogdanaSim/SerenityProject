@@ -8,7 +8,6 @@ public class HeaderSteps {
 
     private HeaderPage headerPage;
 
-
     @Step
     public void clickOnHomepageLogo(){ headerPage.clickOnHomepageLogo(); }
 

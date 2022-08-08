@@ -25,9 +25,4 @@ public class HomePage  extends PageObject {
     public void goBackward(){
         getDriver().navigate().back();
     }
-
-
-
-
-
 }

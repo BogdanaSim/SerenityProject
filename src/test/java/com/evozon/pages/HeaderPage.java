@@ -22,6 +22,16 @@ public class HeaderPage extends PageObject {
     @FindBy(css="a[title='Register']")
     private WebElementFacade registerLink;
 
+
+    @FindBy(css=".nav-primary >li:nth-child(4)")
+    private WebElementFacade selectHomeAndDecor;
+
+    @FindBy(css="li.nav-4 .level1:nth-child(5)")
+    private WebElementFacade selectDecorativeAccents;
+
+
+
+
     public void clickOnHomepageLogo(){
         clickOn(homePageLogo);
     }
@@ -37,10 +47,16 @@ public class HeaderPage extends PageObject {
         return selectLanguages.getFirstSelectedOption().getText();
     }
 
-
     public void clickOnAccountLink() { clickOn(accountLink);}
 
     public void clickOnLogInLink() { clickOn(logInLink);}
 
     public void clickOnRegisterLink() {clickOn(registerLink);}
+
+
+
+    public void clickHomeAndDeco() { clickOn(selectHomeAndDecor);}
+
+    public void clickDecorativeAccents() { clickOn(selectDecorativeAccents);}
+
 }
