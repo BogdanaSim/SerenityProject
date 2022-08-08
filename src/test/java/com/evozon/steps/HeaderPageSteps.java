@@ -11,4 +11,9 @@ public class HeaderPageSteps {
     @Step
     public void clickOnHomepageLogo(){ headerPage.clickOnHomepageLogo(); }
 
+    @Step
+    public void clickOnAccountLink() { headerPage.clickOnAccountLink();}
+
+    @Step
+    public void clickOnLogInLink() { headerPage.clickOnLogInLink();}
 }

@@ -27,4 +27,11 @@ public class HeaderPageTests {
         headerPageSteps.clickOnHomepageLogo();
         homePageSteps.checkTitleHomePage();
     }
+
+
+    public void validLogInLink(){
+        homePageSteps.navigateToHomepage();
+        headerPageSteps.clickOnAccountLink();
+        headerPageSteps.clickOnLogInLink();
+    }
 }
