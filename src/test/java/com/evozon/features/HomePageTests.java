@@ -22,5 +22,11 @@ public class HomePageTests {
         homePageSteps.navigateToHomepage();
         homePageSteps.checkTitleHomePage();
     }
+    @Test
+    public void validHomepageLogo(){
+        homePageSteps.navigateToHomepage();
+        homePageSteps.clickOnHomepageLogo();
+        homePageSteps.checkTitleHomePage();
+    }
 
 }
