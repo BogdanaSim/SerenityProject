@@ -12,8 +12,6 @@ public class HomePage  extends PageObject {
     public String getTitleHomePage(){
         return getTitle();
     }
-    @FindBy(css="a.logo")
-    private WebElementFacade homePageLogo;
 
     public void refreshHomePage(){
         getDriver().navigate().refresh();
@@ -28,10 +26,6 @@ public class HomePage  extends PageObject {
         getDriver().navigate().back();
     }
 
-    
-    public void clickOnHomepageLogo(){
-        clickOn(homePageLogo);
-    }
 
 
 

@@ -1,27 +1,30 @@
 package com.evozon.features;
 
+import com.evozon.steps.HeaderPageSteps;
 import com.evozon.steps.HomePageSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class HomePageTests {
+public class HeaderPageTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
     @Steps
+    private HeaderPageSteps headerPageSteps;
+
+    @Steps
     private HomePageSteps homePageSteps;
 
+
     @Test
-    public void validHomePageTitle(){
+    public void validHomepageLogo(){
         homePageSteps.navigateToHomepage();
+        headerPageSteps.clickOnHomepageLogo();
         homePageSteps.checkTitleHomePage();
     }
-
-
 }

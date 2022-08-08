@@ -22,7 +22,6 @@ public class HomePageSteps {
         Assert.assertTrue(titleHomePage.equalsIgnoreCase("Madison Island"));
     }
 
-    @Step
-    public void clickOnHomepageLogo(){ homePage.clickOnHomepageLogo(); }
+
 
 }
