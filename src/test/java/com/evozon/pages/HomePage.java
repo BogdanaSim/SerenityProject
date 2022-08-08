@@ -29,8 +29,6 @@ public class HomePage  extends PageObject {
     }
 
     
-
-}
     public void clickOnHomepageLogo(){
         clickOn(homePageLogo);
     }
