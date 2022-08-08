@@ -18,12 +18,11 @@ public class HeaderPageSteps {
 
     @Step
     public void clickOnLogInLink() { headerPage.clickOnLogInLink();}
+
     @Step
     public void clickOnLanguageOption(String language){
         headerPage.clickLanguageOption(language);
-
     }
-
     @Step
     public void verifyLanguagePage(String language){
         Assert.assertTrue(language.equalsIgnoreCase(headerPage.getCurrentPageLanguage()));
