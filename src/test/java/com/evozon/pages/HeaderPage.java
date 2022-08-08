@@ -26,8 +26,7 @@ public class HeaderPage extends PageObject {
     @FindBy(css=".nav-primary >li:nth-child(4)")
     private WebElementFacade selectHomeAndDecor;
 
-    @FindBy(css=".catblocks li:last-child a")
-    private WebElementFacade selectDecorativeAccents;
+
 
 
 
@@ -57,6 +56,6 @@ public class HeaderPage extends PageObject {
 
     public void clickHomeAndDeco() { clickOn(selectHomeAndDecor);}
 
-    public void clickDecorativeAccents() { clickOn(selectDecorativeAccents);}
+
 
 }

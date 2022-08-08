@@ -34,9 +34,6 @@ public class HeaderSteps {
         headerPage.clickHomeAndDeco();
     }
 
-    @Step
-    public void clickOnDecorativeAccentsSubcategory(){
-        headerPage.clickDecorativeAccents();
-    }
+
 
 }

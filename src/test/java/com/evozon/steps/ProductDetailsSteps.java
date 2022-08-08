@@ -1,5 +1,6 @@
 package com.evozon.steps;
 
+import com.evozon.pages.CartPage;
 import com.evozon.pages.ProductDetailsPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
@@ -8,6 +9,7 @@ public class ProductDetailsSteps {
 
     private ProductDetailsPage productDetailsPage;
 
+    private CartPage cartPage;
     private double priceProduct;
 
     @Step
@@ -17,7 +19,7 @@ public class ProductDetailsSteps {
     }
 
     @Step
-    public void checkIfEqualToPriceOfProduct(double price){
-        Assert.assertEquals(price,priceProduct,0.01d);
+    public void checkIfEqualToPriceOfProduct(){
+        Assert.assertEquals(cartPage.getPriceOfFirstProductInCart(),priceProduct,0.01d);
     }
 }

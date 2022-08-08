@@ -1,12 +1,10 @@
 package com.evozon.features;
 
+import com.evozon.pages.CategoryPage;
 import com.evozon.pages.HeaderPage;
 import com.evozon.pages.ProductDetailsPage;
 import com.evozon.pages.ProductsPage;
-import com.evozon.steps.CartSteps;
-import com.evozon.steps.HeaderSteps;
-import com.evozon.steps.HomepageSteps;
-import com.evozon.steps.ProductDetailsSteps;
+import com.evozon.steps.*;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
@@ -36,15 +34,18 @@ public class CartTests {
     @Steps
     private HomepageSteps homepageSteps;
 
+    @Steps
+    private CategorySteps categorySteps;
+
     @Test
     public void addOneProductToCart(){
 
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnHomeAndDecorCategory();
-        headerSteps.clickOnDecorativeAccentsSubcategory();
+        categorySteps.clickOnDecorativeAccentsSubcategory();
         productsPage.clickOnFirstProduct();
         productDetailsSteps.clickOnAddToCartButton();
-        productDetailsSteps.checkIfEqualToPriceOfProduct(cartSteps.getPriceOfFirstProductInCart());
+        productDetailsSteps.checkIfEqualToPriceOfProduct();
 
     }
 

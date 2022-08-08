@@ -7,7 +7,7 @@ public class CartSteps {
 
     private CartPage cartPage;
 
-    @Step
+
     public double getPriceOfFirstProductInCart(){
         return cartPage.getPriceOfFirstProductInCart();
     }
