@@ -34,4 +34,11 @@ public class HeaderPageTests {
         headerPageSteps.clickOnAccountLink();
         headerPageSteps.clickOnLogInLink();
     }
+
+    @Test
+    public void changeLanguage(){
+        homePageSteps.navigateToHomepage();
+        headerPageSteps.clickOnLanguageOption("French");
+        headerPageSteps.verifyLanguagePage("French");
+    }
 }
