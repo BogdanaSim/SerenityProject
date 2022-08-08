@@ -2,11 +2,11 @@ package com.evozon.steps;
 
 
 import com.evozon.pages.HomePage;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-public class HomePageSteps {
+public class HomepageSteps {
+
 
     private HomePage homePage;
 

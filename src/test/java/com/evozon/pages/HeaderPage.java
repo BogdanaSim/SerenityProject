@@ -19,6 +19,9 @@ public class HeaderPage extends PageObject {
     @FindBy(css="a[title='Log In']")
     private WebElementFacade logInLink;
 
+    @FindBy(css="a[title='Register']")
+    private WebElementFacade registerLink;
+
     public void clickOnHomepageLogo(){
         clickOn(homePageLogo);
     }
@@ -38,4 +41,6 @@ public class HeaderPage extends PageObject {
     public void clickOnAccountLink() { clickOn(accountLink);}
 
     public void clickOnLogInLink() { clickOn(logInLink);}
+
+    public void clickOnRegisterLink() {clickOn(registerLink);}
 }

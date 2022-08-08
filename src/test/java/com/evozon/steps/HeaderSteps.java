@@ -2,10 +2,9 @@ package com.evozon.steps;
 
 import com.evozon.pages.HeaderPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
-public class HeaderPageSteps {
+public class HeaderSteps {
 
     private HeaderPage headerPage;
 
@@ -18,6 +17,9 @@ public class HeaderPageSteps {
 
     @Step
     public void clickOnLogInLink() { headerPage.clickOnLogInLink();}
+
+    @Step
+    public void clickOnRegisterLink() { headerPage.clickOnRegisterLink();}
 
     @Step
     public void clickOnLanguageOption(String language){

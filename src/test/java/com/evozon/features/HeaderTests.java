@@ -1,7 +1,7 @@
 package com.evozon.features;
 
-import com.evozon.steps.HeaderPageSteps;
-import com.evozon.steps.HomePageSteps;
+import com.evozon.steps.HeaderSteps;
+import com.evozon.steps.HomepageSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -10,35 +10,35 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class HeaderPageTests {
+public class HeaderTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
     @Steps
-    private HeaderPageSteps headerPageSteps;
+    private HeaderSteps headerSteps;
 
     @Steps
-    private HomePageSteps homePageSteps;
+    private HomepageSteps homePageSteps;
 
 
     @Test
     public void validHomepageLogo(){
         homePageSteps.navigateToHomepage();
-        headerPageSteps.clickOnHomepageLogo();
+        headerSteps.clickOnHomepageLogo();
         homePageSteps.checkTitleHomePage();
     }
 
 
     public void validLogInLink(){
         homePageSteps.navigateToHomepage();
-        headerPageSteps.clickOnAccountLink();
-        headerPageSteps.clickOnLogInLink();
+        headerSteps.clickOnAccountLink();
+        headerSteps.clickOnLogInLink();
     }
 
     @Test
     public void changeLanguage(){
         homePageSteps.navigateToHomepage();
-        headerPageSteps.clickOnLanguageOption("French");
-        headerPageSteps.verifyLanguagePage("French");
+        headerSteps.clickOnLanguageOption("French");
+        headerSteps.verifyLanguagePage("French");
     }
 }
