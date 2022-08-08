@@ -11,4 +11,19 @@ public class HomePage  extends PageObject {
         return getTitle();
     }
 
+    public void refreshHomePage(){
+        getDriver().navigate().refresh();
+       // waitForWithRefresh();
+    }
+
+    public void goForward(){
+        getDriver().navigate().forward();
+    }
+
+    public void goBackward(){
+        getDriver().navigate().back();
+    }
+
+    
+
 }
