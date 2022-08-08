@@ -45,7 +45,7 @@ public class CartTests {
         categorySteps.clickOnDecorativeAccentsSubcategory();
         productsPage.clickOnFirstProduct();
         productDetailsSteps.clickOnAddToCartButton();
-        productDetailsSteps.checkIfEqualToPriceOfProduct();
+        productDetailsSteps.checkIfEqualToPriceOfProductToTheFirstProductInCart();
 
     }
 

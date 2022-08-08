@@ -19,7 +19,7 @@ public class ProductDetailsSteps {
     }
 
     @Step
-    public void checkIfEqualToPriceOfProduct(){
+    public void checkIfEqualToPriceOfProductToTheFirstProductInCart(){
         Assert.assertEquals(cartPage.getPriceOfFirstProductInCart(),priceProduct,0.01d);
     }
 }
