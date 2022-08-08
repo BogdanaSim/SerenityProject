@@ -26,7 +26,7 @@ public class HeaderPage extends PageObject {
     @FindBy(css=".nav-primary >li:nth-child(4)")
     private WebElementFacade selectHomeAndDecor;
 
-    @FindBy(css="li.nav-4 .level1:nth-child(5)")
+    @FindBy(css=".catblocks li:last-child a")
     private WebElementFacade selectDecorativeAccents;
 
 
