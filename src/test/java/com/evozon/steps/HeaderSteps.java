@@ -29,4 +29,14 @@ public class HeaderSteps {
         Assert.assertTrue(language.equalsIgnoreCase(headerPage.getCurrentPageLanguage()));
     }
 
+    @Step
+    public void clickOnHomeAndDecorCategory(){
+        headerPage.clickHomeAndDeco();
+    }
+
+    @Step
+    public void clickOnDecorativeAccentsSubcategory(){
+        headerPage.clickDecorativeAccents();
+    }
+
 }
