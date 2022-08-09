@@ -36,9 +36,9 @@ public class CheckoutSteps {
     }
     @Step
     public void clickContinueButtonOnShippingPage() { checkoutPage.clickContinueButtonOnShippingPage();}
-
+    @Step
     public void clickShippingInformation() { checkoutPage.clickOnShippingInformation();}
     @Step
-    public void clickFreeShippingMethod() { checkoutPage.clickFreeShippingMethod();}
+    public void clickFreeShippingMethod() { checkoutPage.selectFreeShippingMethod();}
 
 }

@@ -55,7 +55,6 @@ public class CheckoutTests {
         checkoutSteps.clickContinueButtonOnBillingPage();
         checkoutSteps.clickShippingInformation();
         checkoutSteps.clickContinueButtonOnShippingPage();
-        //continue
         checkoutSteps.clickFreeShippingMethod();
     }
 }

@@ -34,11 +34,14 @@ public class CheckoutPage extends PageObject {
     @FindBy(css="#co-shipping-form  .button.validation-passed")
     private WebElementFacade continueButtonOnShippingPage;
 
+    @FindBy(css="#opc-shipping")
+    private WebElementFacade shippingInformation;
+
     @FindBy(css=".sp-methods ul li #s_method_freeshipping_freeshipping")
     private WebElementFacade freeShippingMethod;
 
-    @FindBy(css="#opc-shipping")
-    private WebElementFacade shippingInformation;
+    @FindBy(css="#opc-shipping > div.step-title > h2")
+    private WebElementFacade clickShippingInformation;
 
 
     public void setAddressField(String address){
@@ -56,15 +59,10 @@ public class CheckoutPage extends PageObject {
     public void setPostalCode(String postalCode){ typeInto(postalCodeField, postalCode);}
     public void setTelephoneNumberField(String telephoneNumber){ typeInto(telephoneNumberField, telephoneNumber); }
     public void clickContinueButtonOnBillingPage(){ clickOn(continueButtonOnBillingPage);}
-    public void clickContinueButtonOnShippingPage() { clickOn(continueButtonOnBillingPage);}
-
     public void clickOnShippingInformation(){ clickOn(shippingInformation);}
-
-    public void clickFreeShippingMethod() {
+    public void clickContinueButtonOnShippingPage() {clickOn(continueButtonOnShippingPage);}
+    public void selectFreeShippingMethod() {
         waitFor(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".sp-methods ul li #s_method_freeshipping_freeshipping")));
-        clickOn(freeShippingMethod);}
-
-
-
-
+        clickOn(freeShippingMethod);
+    }
 }
