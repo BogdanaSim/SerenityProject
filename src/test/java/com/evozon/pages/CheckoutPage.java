@@ -10,57 +10,81 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CheckoutPage extends PageObject {
 
-    @FindBy(css="#billing\\:street1")
+    @FindBy(css = "#billing\\:street1")
     private WebElementFacade addressField;
 
-    @FindBy(css="#billing\\:city")
+    @FindBy(css = "#billing\\:city")
     private WebElementFacade cityField;
 
-    @FindBy (css="#billing\\:region_id")
+    @FindBy(css = "#billing\\:region_id")
     private WebElementFacade regionField;
 
-    @FindBy (css="#billing\\:postcode")
+    @FindBy(css = "#billing\\:postcode")
     private WebElementFacade postalCodeField;
 
-    @FindBy (css="#billing\\:country_id")
+    @FindBy(css = "#billing\\:country_id")
     private WebElementFacade countryField;
 
-    @FindBy(css="#billing\\:telephone")
+    @FindBy(css = "#billing\\:telephone")
     private WebElementFacade telephoneNumberField;
 
-    @FindBy(css="#billing-buttons-container > button")
+    @FindBy(css = "#billing-buttons-container > button")
     private WebElementFacade continueButtonOnBillingPage;
 
-    @FindBy(css="#co-shipping-form  .button.validation-passed")
+    @FindBy(css = "#co-shipping-form .button")
     private WebElementFacade continueButtonOnShippingPage;
 
-    @FindBy(css="#opc-shipping")
+    @FindBy(css = "#opc-shipping")
     private WebElementFacade shippingInformation;
 
-    @FindBy(css=".sp-methods ul li #s_method_freeshipping_freeshipping")
+    @FindBy(css = ".sp-methods ul li #s_method_freeshipping_freeshipping")
     private WebElementFacade freeShippingMethod;
 
-    @FindBy(css="#opc-shipping > div.step-title > h2")
+    @FindBy(css = "#opc-shipping > div.step-title > h2")
     private WebElementFacade clickShippingInformation;
 
 
-    public void setAddressField(String address){
+    public void setAddressField(String address) {
         typeInto(addressField, address);
     }
+
     public void setCityField(String city) {
         typeInto(cityField, city);
     }
-    public void setCountryField(){
+
+    public void setCountryField() {
         selectFromDropdown(countryField, "Romania");
     }
+
     public void setRegionField() {
         selectFromDropdown(regionField, "Cluj");
     }
-    public void setPostalCode(String postalCode){ typeInto(postalCodeField, postalCode);}
-    public void setTelephoneNumberField(String telephoneNumber){ typeInto(telephoneNumberField, telephoneNumber); }
-    public void clickContinueButtonOnBillingPage(){ clickOn(continueButtonOnBillingPage);}
-    public void clickOnShippingInformation(){ clickOn(shippingInformation);}
-    public void clickContinueButtonOnShippingPage() {clickOn(continueButtonOnShippingPage);}
+
+    public void setPostalCode(String postalCode) {
+        typeInto(postalCodeField, postalCode);
+    }
+
+    public void setTelephoneNumberField(String telephoneNumber) {
+        typeInto(telephoneNumberField, telephoneNumber);
+    }
+
+    public void clickContinueButtonOnBillingPage() {
+        clickOn(continueButtonOnBillingPage);
+
+
+    }
+
+    public void clickOnShippingInformation(){
+        continueButtonOnShippingPage.waitUntilVisible();
+        clickOn(shippingInformation);
+
+    }
+
+    public void clickContinueButtonOnShippingPage() {
+
+        clickOn(continueButtonOnShippingPage);
+    }
+
     public void selectFreeShippingMethod() {
         waitFor(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".sp-methods ul li #s_method_freeshipping_freeshipping")));
         clickOn(freeShippingMethod);

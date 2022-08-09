@@ -49,5 +49,28 @@ public class CartTests {
 
     }
 
+    @Test
+    public void removeFirstProductInCart(){
+        homepageSteps.navigateToHomepage();
+        headerSteps.clickOnHomeAndDecorCategory();
+        categorySteps.clickOnDecorativeAccentsSubcategory();
+        productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.clickOnAddToCartButton();
+        cartSteps.clickOnRemoveButtonOfTheFirstProductInCart();
+        cartSteps.checkIfCartIsEmpty();
+
+    }
+
+    @Test
+    public void updateQuantityOfFirstProductInCart(){
+        homepageSteps.navigateToHomepage();
+        headerSteps.clickOnHomeAndDecorCategory();
+        categorySteps.clickOnDecorativeAccentsSubcategory();
+        productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.clickOnAddToCartButton();
+        cartSteps.updateQuantityOfFirstProductInCart("5");
+        cartSteps.clickUpdateQuantityButtonOfFirstProductInCart();
+        cartSteps.verifyQuantityWasUpdatedToValue("5");
+    }
 
 }

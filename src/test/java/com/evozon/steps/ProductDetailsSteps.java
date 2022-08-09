@@ -22,4 +22,6 @@ public class ProductDetailsSteps {
     public void checkIfEqualToPriceOfProductToTheFirstProductInCart(){
         Assert.assertEquals(cartPage.getPriceOfFirstProductInCart(),priceProduct,0.01d);
     }
+
+
 }

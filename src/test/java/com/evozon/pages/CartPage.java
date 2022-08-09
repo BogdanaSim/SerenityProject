@@ -17,6 +17,18 @@ public class CartPage extends PageObject {
     @FindBy(css="div.cart-totals button.btn-proceed-checkout")
     private WebElementFacade checkoutButton;
 
+    @FindBy(css=".product-cart-remove a.btn-remove.btn-remove2")
+    private WebElementFacade removeButtonOfFirstProductInCart;
+
+    @FindBy(css="div.page-title h1")
+    private WebElementFacade titleCartPage;
+
+    @FindBy(css=".product-cart-actions .input-text.qty")
+    private WebElementFacade quantityFirstProductInCart;
+
+    @FindBy(css=".product-cart-actions .input-text.qty")
+    private WebElementFacade updateQuantityButtonOfFirstProductInCart;
+
     public double getPriceOfFirstProductInCart() {
         return Double.parseDouble(nameOfFirstProductInCart.getText().substring(1));
     }
@@ -25,5 +37,19 @@ public class CartPage extends PageObject {
         clickOn(checkoutButton);
     }
 
+    public void clickOnRemoveButtonForTheFirstProduct(){
+        clickOn(removeButtonOfFirstProductInCart);
+    }
 
+    public String getCurrentTitleForCartPage(){
+        return titleCartPage.getText();
+    }
+
+    public void setQuantityFirstProductInCart(String quantity){
+        typeInto(quantityFirstProductInCart,quantity);
+    }
+
+    public void clickUpdateQuantityButtonOfFirstProductInCart() {
+        clickOn(updateQuantityButtonOfFirstProductInCart);
+    }
 }

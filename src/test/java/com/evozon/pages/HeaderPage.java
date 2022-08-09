@@ -71,6 +71,7 @@ public class HeaderPage extends PageObject {
         WebElementFacade elementCategory=getCategoryFromMainMenu(category);
         withAction().moveToElement(elementCategory).perform();
         waitFor(ExpectedConditions.presenceOfElementLocated(By.cssSelector("li.level0 ul.level0")));
+
     }
 
     public List<WebElementFacade> getSubcategoriesFromMainMenu(WebElementFacade category){
