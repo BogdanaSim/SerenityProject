@@ -14,8 +14,15 @@ public class CartPage extends PageObject {
     @FindBy(css="table#shopping-cart-table tbody tr")
     private List<WebElementFacade> productsInCart;
 
+    @FindBy(css="div.cart-totals button.btn-proceed-checkout")
+    private WebElementFacade checkoutButton;
+
     public double getPriceOfFirstProductInCart() {
         return Double.parseDouble(nameOfFirstProductInCart.getText().substring(1));
+    }
+
+    public void clickOnProceedToCheckoutButton(){
+        clickOn(checkoutButton);
     }
 
 
