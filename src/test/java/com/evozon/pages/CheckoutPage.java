@@ -43,6 +43,9 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#opc-shipping > div.step-title > h2")
     private WebElementFacade clickShippingInformation;
 
+    @FindBy(css = "#shipping-method-buttons-container .button.validation-passed")
+    private WebElementFacade clickFreeShippingButton;
+
 
     public void setAddressField(String address) {
         typeInto(addressField, address);
@@ -70,23 +73,28 @@ public class CheckoutPage extends PageObject {
 
     public void clickContinueButtonOnBillingPage() {
         clickOn(continueButtonOnBillingPage);
-
-
     }
 
     public void clickOnShippingInformation(){
         continueButtonOnShippingPage.waitUntilVisible();
         clickOn(shippingInformation);
-
     }
 
     public void clickContinueButtonOnShippingPage() {
-
         clickOn(continueButtonOnShippingPage);
     }
 
     public void selectFreeShippingMethod() {
-        waitFor(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".sp-methods ul li #s_method_freeshipping_freeshipping")));
+        freeShippingMethod.waitUntilVisible();
         clickOn(freeShippingMethod);
+        clickFreeShippingButton.waitUntilVisible();
+
     }
+    public void setClickFreeShippingButton() {
+        clickOn(clickFreeShippingButton);
+    }
+
+
+
+
 }
