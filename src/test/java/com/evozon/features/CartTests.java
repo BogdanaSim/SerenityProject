@@ -19,7 +19,7 @@ public class CartTests {
     private WebDriver driver;
 
     @Steps
-    private ProductsPage productsPage;
+    private ProductsPageSteps productsPageSteps;
 
     @Steps
     private ProductDetailsSteps productDetailsSteps;
@@ -43,7 +43,7 @@ public class CartTests {
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnHomeAndDecorCategory();
         categorySteps.clickOnDecorativeAccentsSubcategory();
-        productsPage.clickOnFirstProduct();
+        productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.clickOnAddToCartButton();
         productDetailsSteps.checkIfEqualToPriceOfProductToTheFirstProductInCart();
 
