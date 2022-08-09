@@ -51,4 +51,14 @@ public class HeaderSteps {
         List<WebElementFacade> elementSubcategories=headerPage.getSubcategoriesFromMainMenu(elementCategory);
         headerPage.clickOnSubcategoryFromMainMenu(subcategory,elementSubcategories);
     }
+
+    @Step
+    public void clickOnMiniCartButton(){
+        headerPage.clickMiniCartButton();
+    }
+
+    @Step
+    public void clickOnMiniCartCheckoutButton(){
+        headerPage.clickMiniCartCheckoutButton();
+    }
 }

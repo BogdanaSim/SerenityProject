@@ -34,7 +34,13 @@ public class HeaderPage extends PageObject {
     private WebElementFacade selectHomeAndDecor;
 
     @FindBy(css="#nav ol.nav-primary li.level0.parent")
-    List<WebElementFacade> mainMenuCategories;
+    private List<WebElementFacade> mainMenuCategories;
+
+    @FindBy(css=".header-minicart > a")
+    private WebElementFacade miniCartButton;
+
+    @FindBy(css=".minicart-wrapper .checkout-button")
+    private WebElementFacade miniCartCheckoutButton;
 
 
     public void clickOnHomepageLogo(){
@@ -85,6 +91,12 @@ public class HeaderPage extends PageObject {
 
     }
 
+    public void clickMiniCartButton(){
+        clickOn(miniCartButton);
+    }
 
+    public void clickMiniCartCheckoutButton(){
+        clickOn(miniCartCheckoutButton);
+    }
 
 }
