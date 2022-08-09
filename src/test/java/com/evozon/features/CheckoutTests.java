@@ -34,7 +34,7 @@ public class CheckoutTests {
 
 
     @Test
-    public void checkoutTests(){
+    public void checkoutTests() throws InterruptedException {
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
@@ -45,13 +45,13 @@ public class CheckoutTests {
         categorySteps.clickOnDecorativeAccentsSubcategory();
         productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.clickOnAddToCartButton();
-
-
-
+        cartSteps.clickOnProceedToCheckoutButton();
+        checkoutSteps.enterAddress("Motilor");
+        checkoutSteps.enterCity("Cluj-Napoca");
+        checkoutSteps.selectCountry();
+        checkoutSteps.enterPostalCode("123456");
+        checkoutSteps.selectRegion();
+        checkoutSteps.enterTelephoneNumber("0767825364");
+        checkoutSteps.clickContinueButton();
     }
-
-
-
-
-
 }

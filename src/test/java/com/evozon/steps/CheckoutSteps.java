@@ -11,12 +11,10 @@ public class CheckoutSteps {
     public void enterAddress(String address){
         checkoutPage.setAddressField(address);
     }
-
     @Step
     public void enterCity(String city) {
         checkoutPage.setCityField(city);
     }
-
     @Step
     public void selectRegion(){
         checkoutPage.setRegionField();
@@ -30,9 +28,12 @@ public class CheckoutSteps {
         checkoutPage.setCountryField();
     }
     @Step
+    public void enterTelephoneNumber(String telephoneNumber){ checkoutPage.setTelephoneNumberField(telephoneNumber);}
+    @Step
     public void clickContinueButton()
     {
         checkoutPage.clickContinueButton();
     }
+
 
 }

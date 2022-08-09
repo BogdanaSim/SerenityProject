@@ -36,16 +36,17 @@ public class CheckoutPage extends PageObject {
     public void setCityField(String city) {
         typeInto(cityField, city);
     }
+    public void setCountryField(){
+        selectFromDropdown(countryField, "Romania");
+    }
     public void setRegionField() {
-        selectFromDropdown(regionField, "#billing\\:region_id > option:nth-child(34)");
+        selectFromDropdown(regionField, "Cluj");
     }
     public void setPostalCode(String postalCode){
         typeInto(postalCodeField, postalCode);
     }
-    public void setCountryField(){
-        selectFromDropdown(countryField, "#billing\\:country_id > option:nth-child(179)");
-    }
-    public void setTelephoneNumberField (String telephoneNumber){
+
+    public void setTelephoneNumberField(String telephoneNumber){
         typeInto(telephoneNumberField, telephoneNumber);
     }
     public void clickContinueButton(){
