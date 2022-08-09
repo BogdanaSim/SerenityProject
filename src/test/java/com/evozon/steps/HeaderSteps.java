@@ -1,8 +1,12 @@
 package com.evozon.steps;
 
 import com.evozon.pages.HeaderPage;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+
+import java.util.List;
 
 public class HeaderSteps {
 
@@ -35,5 +39,16 @@ public class HeaderSteps {
     }
 
 
+    @Step
+    public void hoverOnCategoryFromMainMenu(String category)
+    {
+        headerPage.hoverOverCategoryInMainMenu(category);
+    }
 
+    @Step
+    public void clickSubcategoryFromMainMenu(String category,String subcategory){
+        WebElementFacade elementCategory=headerPage.getCategoryFromMainMenu(category);
+        List<WebElementFacade> elementSubcategories=headerPage.getSubcategoriesFromMainMenu(elementCategory);
+        headerPage.clickOnSubcategoryFromMainMenu(subcategory,elementSubcategories);
+    }
 }
