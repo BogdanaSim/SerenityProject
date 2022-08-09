@@ -52,6 +52,10 @@ public class CheckoutTests {
         checkoutSteps.enterPostalCode("123456");
         checkoutSteps.selectRegion();
         checkoutSteps.enterTelephoneNumber("0767825364");
-        checkoutSteps.clickContinueButton();
+        checkoutSteps.clickContinueButtonOnBillingPage();
+        checkoutSteps.clickShippingInformation();
+        checkoutSteps.clickContinueButtonOnShippingPage();
+        //continue
+        checkoutSteps.clickFreeShippingMethod();
     }
 }

@@ -30,10 +30,15 @@ public class CheckoutSteps {
     @Step
     public void enterTelephoneNumber(String telephoneNumber){ checkoutPage.setTelephoneNumberField(telephoneNumber);}
     @Step
-    public void clickContinueButton()
+    public void clickContinueButtonOnBillingPage()
     {
-        checkoutPage.clickContinueButton();
+        checkoutPage.clickContinueButtonOnBillingPage();
     }
+    @Step
+    public void clickContinueButtonOnShippingPage() { checkoutPage.clickContinueButtonOnShippingPage();}
 
+    public void clickShippingInformation() { checkoutPage.clickOnShippingInformation();}
+    @Step
+    public void clickFreeShippingMethod() { checkoutPage.clickFreeShippingMethod();}
 
 }

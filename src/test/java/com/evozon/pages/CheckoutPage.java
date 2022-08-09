@@ -2,7 +2,11 @@ package com.evozon.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CheckoutPage extends PageObject {
 
@@ -14,7 +18,6 @@ public class CheckoutPage extends PageObject {
 
     @FindBy (css="#billing\\:region_id")
     private WebElementFacade regionField;
-    //select by index?
 
     @FindBy (css="#billing\\:postcode")
     private WebElementFacade postalCodeField;
@@ -26,8 +29,16 @@ public class CheckoutPage extends PageObject {
     private WebElementFacade telephoneNumberField;
 
     @FindBy(css="#billing-buttons-container > button")
-    private WebElementFacade continueButton;
+    private WebElementFacade continueButtonOnBillingPage;
 
+    @FindBy(css="#co-shipping-form  .button.validation-passed")
+    private WebElementFacade continueButtonOnShippingPage;
+
+    @FindBy(css=".sp-methods ul li #s_method_freeshipping_freeshipping")
+    private WebElementFacade freeShippingMethod;
+
+    @FindBy(css="#opc-shipping")
+    private WebElementFacade shippingInformation;
 
 
     public void setAddressField(String address){
@@ -42,18 +53,16 @@ public class CheckoutPage extends PageObject {
     public void setRegionField() {
         selectFromDropdown(regionField, "Cluj");
     }
-    public void setPostalCode(String postalCode){
-        typeInto(postalCodeField, postalCode);
-    }
+    public void setPostalCode(String postalCode){ typeInto(postalCodeField, postalCode);}
+    public void setTelephoneNumberField(String telephoneNumber){ typeInto(telephoneNumberField, telephoneNumber); }
+    public void clickContinueButtonOnBillingPage(){ clickOn(continueButtonOnBillingPage);}
+    public void clickContinueButtonOnShippingPage() { clickOn(continueButtonOnBillingPage);}
 
-    public void setTelephoneNumberField(String telephoneNumber){
-        typeInto(telephoneNumberField, telephoneNumber);
-    }
-    public void clickContinueButton(){
-        clickOn(continueButton);
-    }
+    public void clickOnShippingInformation(){ clickOn(shippingInformation);}
 
-
+    public void clickFreeShippingMethod() {
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".sp-methods ul li #s_method_freeshipping_freeshipping")));
+        clickOn(freeShippingMethod);}
 
 
 
