@@ -29,6 +29,9 @@ public class CartPage extends PageObject {
     @FindBy(css=".product-cart-actions .input-text.qty")
     private WebElementFacade updateQuantityButtonOfFirstProductInCart;
 
+    @FindBy(css=".product-cart-actions a[title='Edit item parameters']")
+    private WebElementFacade editButtonOfFirstProductInCart;
+
     public double getPriceOfFirstProductInCart() {
         return Double.parseDouble(nameOfFirstProductInCart.getText().substring(1));
     }
@@ -51,5 +54,9 @@ public class CartPage extends PageObject {
 
     public void clickUpdateQuantityButtonOfFirstProductInCart() {
         clickOn(updateQuantityButtonOfFirstProductInCart);
+    }
+
+    public void clickEditLinkOfFirstProductInCart(){
+        clickOn(editButtonOfFirstProductInCart);
     }
 }

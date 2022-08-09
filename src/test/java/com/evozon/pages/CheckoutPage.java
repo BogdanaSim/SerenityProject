@@ -43,7 +43,7 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#opc-shipping > div.step-title > h2")
     private WebElementFacade clickShippingInformation;
 
-    @FindBy(css = "#shipping-method-buttons-container .button.validation-passed")
+    @FindBy(css = "#shipping-method-buttons-container .button")
     private WebElementFacade clickFreeShippingButton;
 
 
@@ -87,10 +87,11 @@ public class CheckoutPage extends PageObject {
     public void selectFreeShippingMethod() {
         freeShippingMethod.waitUntilVisible();
         clickOn(freeShippingMethod);
-        clickFreeShippingButton.waitUntilVisible();
+
 
     }
     public void setClickFreeShippingButton() {
+
         clickOn(clickFreeShippingButton);
     }
 

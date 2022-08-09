@@ -27,4 +27,8 @@ public class ProductDetailsPage extends PageObject {
     public void setQuantityProduct(String quantity){
         typeInto(quantityProduct,quantity);
     }
+
+    public int getQuantityProduct() {
+        return Integer.parseInt(quantityProduct.getText());
+    }
 }

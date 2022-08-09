@@ -11,6 +11,7 @@ public class ProductDetailsSteps {
 
     private CartPage cartPage;
     private double priceProduct;
+    private int previousQuantity;
 
     @Step
     public void clickOnAddToCartButton(){
@@ -22,6 +23,13 @@ public class ProductDetailsSteps {
     public void checkIfEqualToPriceOfProductToTheFirstProductInCart(){
         Assert.assertEquals(cartPage.getPriceOfFirstProductInCart(),priceProduct,0.01d);
     }
+
+    @Step
+    public void changeQuantityOfTheProductOnTheDetailsPage(String quantity){
+        previousQuantity= productDetailsPage.getQuantityProduct();
+        productDetailsPage.setQuantityProduct(quantity);
+    }
+
 
 
 }
