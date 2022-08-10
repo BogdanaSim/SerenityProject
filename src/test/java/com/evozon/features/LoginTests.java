@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value="src/test/java/com/evozon/login/login.csv")
+@UseTestDataFrom(value="src/test/resources/csv/login.csv")
 public class LoginTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;

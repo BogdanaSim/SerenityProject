@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
-    @UseTestDataFrom(value="src/test/java/com/evozon/files/search.csv")
+    @UseTestDataFrom(value="src/test/resources/csv/search.csv")
 
     public class SearchTests {
         @Managed(uniqueSession = true )
@@ -32,5 +32,4 @@ import org.openqa.selenium.WebDriver;
             searchSteps.searchText(sku);
             searchSteps.clickSearchButton();
         }
-
     }
