@@ -28,7 +28,6 @@ public class LoginTests {
     private HeaderSteps headerSteps;
 
 
-
     private String email, password, firstname,lastname;
 
     @Test

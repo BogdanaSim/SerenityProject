@@ -22,6 +22,9 @@ public class HeaderTests {
     private HomepageSteps homePageSteps;
 
 
+
+
+
     @Test
     public void validHomepageLogo(){
         homePageSteps.navigateToHomepage();
