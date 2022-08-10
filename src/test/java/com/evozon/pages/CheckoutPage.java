@@ -87,11 +87,12 @@ public class CheckoutPage extends PageObject {
     }
 
     public void clickOnShippingInformation() {
-        continueButtonOnShippingPage.waitUntilVisible();
+
         clickOn(shippingInformation);
     }
 
     public void clickContinueButtonOnShippingPage() {
+        continueButtonOnShippingPage.waitUntilVisible();
         clickOn(continueButtonOnShippingPage);
     }
 

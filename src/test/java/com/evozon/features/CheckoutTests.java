@@ -42,13 +42,13 @@ public class CheckoutTests {
         loginSteps.enterEmail("andreea@mail.com");
         loginSteps.enterPassword("andreea");
         loginSteps.clickOnLoginButton();
-        headerSteps.clickOnHomeAndDecorCategory();//
-        categorySteps.clickOnDecorativeAccentsSubcategory();//
-        productsPageSteps.clickOnFirstProduct();//
-        productDetailsSteps.clickOnAddToCartButton();//
-        cartSteps.clickOnProceedToCheckoutButton(); //
-//        headerSteps.clickOnMiniCartButton();
-//        headerSteps.clickOnMiniCartCheckoutButton();
+//        headerSteps.clickOnHomeAndDecorCategory();//
+//        categorySteps.clickOnDecorativeAccentsSubcategory();//
+//        productsPageSteps.clickOnFirstProduct();//
+//        productDetailsSteps.clickOnAddToCartButton();//
+//        cartSteps.clickOnProceedToCheckoutButton(); //
+        headerSteps.clickOnMiniCartButton();
+        headerSteps.clickOnMiniCartCheckoutButton();
         checkoutSteps.enterAddress("Motilor");
         checkoutSteps.enterCity("Cluj-Napoca");
         checkoutSteps.selectCountry();
