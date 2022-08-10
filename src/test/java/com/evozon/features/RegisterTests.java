@@ -4,16 +4,21 @@ import com.evozon.steps.HeaderSteps;
 import com.evozon.steps.HomepageSteps;
 import com.evozon.steps.LoginSteps;
 import com.evozon.steps.RegisterSteps;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import static java.util.UUID.randomUUID;
 
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom(value="src/test/resources/csv/file.csv")
 public class RegisterTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
@@ -26,18 +31,21 @@ public class RegisterTests {
     @Steps
     private LoginSteps loginSteps;
 
+    public String firstname,lastname,email,password;
+
     @Test
     public void registerTest(){
         homePageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnRegisterLink();
-        registerSteps.enterFirstName("fname");
-        registerSteps.enterLastName("lname");
-        registerSteps.enterEmail(randomUUID() +"@mail.com");
-        registerSteps.enterPassword("123456");
-        registerSteps.confirmPassword("123456");
+        registerSteps.enterFirstName(firstname);
+        registerSteps.enterLastName(lastname);
+//        registerSteps.enterEmail(randomUUID() +"@mail.com");
+        registerSteps.enterEmail(email);
+        registerSteps.enterPassword(password);
+        registerSteps.confirmPassword(password);
         registerSteps.clickRegisterButton();
-        loginSteps.verifyUserIsLoggedIn("fname lname");
+        loginSteps.verifyUserIsLoggedIn(firstname+" "+lastname);
 
     }
 }
