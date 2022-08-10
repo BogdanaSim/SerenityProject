@@ -34,7 +34,7 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#co-shipping-form .button")
     private WebElementFacade continueButtonOnShippingPage;
 
-    @FindBy(css = "#opc-shipping > div.step-title > h2")
+    @FindBy(css = "li[id='opc-shipping'][class*='section allow']")
     private WebElementFacade shippingInformation;
 
     @FindBy(css = ".sp-methods ul li #s_method_freeshipping_freeshipping")
@@ -51,6 +51,9 @@ public class CheckoutPage extends PageObject {
 
     @FindBy(css= "#review-buttons-container>button")
     private WebElementFacade PlaceOrderButton;
+
+    @FindBy(css= "select#billing-address-select")
+    private WebElementFacade selectAddress;
 
 //    @FindBy(css= ".col-main .sub-title")
 //    private WebElementFacade thankYouMessage;
@@ -83,23 +86,26 @@ public class CheckoutPage extends PageObject {
     }
 
     public void clickContinueButtonOnBillingPage() {
-        continueButtonOnBillingPage.waitUntilVisible();
+        //continueButtonOnBillingPage.waitUntilVisible();
         clickOn(continueButtonOnBillingPage);
     }
 
     public void clickOnShippingInformation() {
-        shippingInformation.waitUntilClickable();
+        //shippingInformation.waitUntilClickable();
+        //shippingInformation.waitUntilEnabled();
+
         clickOn(shippingInformation);
     }
 
     public void clickContinueButtonOnShippingPage() {
-        continueButtonOnShippingPage.waitUntilVisible();
+        continueButtonOnShippingPage.waitUntilClickable();
         clickOn(continueButtonOnShippingPage);
     }
 
     public void selectFreeShippingMethod() {
-        freeShippingMethod.waitUntilVisible();
-        clickOn(freeShippingMethod);
+        //freeShippingMethod.waitUntilVisible();
+        if(freeShippingMethod.isPresent())
+            clickOn(freeShippingMethod);
     }
 
     public void setClickFreeShippingButton() {
@@ -113,6 +119,10 @@ public class CheckoutPage extends PageObject {
     public void clickPlaceOrderButton() {
         PlaceOrderButton.waitUntilVisible();
         clickOn(PlaceOrderButton);}
+
+    public boolean checkExistenceOfDefaultAddress(){
+        return selectAddress.isDisplayed();
+    }
 
 //    public String thankYouMessage() {
 //        return thankYouMessage.getText();}
