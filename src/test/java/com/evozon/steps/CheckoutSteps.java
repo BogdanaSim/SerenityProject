@@ -8,6 +8,7 @@ import org.junit.Assert;
 public class CheckoutSteps {
     private CheckoutPage checkoutPage;
     //private ThankYouMessage thankYouMessage;
+    private String address, city, region, postalCode, telephoneNumber, country;
 
     @Step
     public void enterAddress(String address){
@@ -52,5 +53,15 @@ public class CheckoutSteps {
 //    public void thankYouMessageConfirmation(String thankYouMessage) {
 //        Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
 //    }
+    @Step
+    public void completeForm() {
+        enterAddress(address);
+        enterCity(city);
+        selectRegion();
+        enterPostalCode(postalCode);
+        enterTelephoneNumber(telephoneNumber);
+        selectCountry();
+
+    }
 
 }

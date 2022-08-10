@@ -114,7 +114,6 @@ public class CheckoutPage extends PageObject {
         PlaceOrderButton.waitUntilVisible();
         clickOn(PlaceOrderButton);}
 
-
 //    public String thankYouMessage() {
 //        return thankYouMessage.getText();}
 }
