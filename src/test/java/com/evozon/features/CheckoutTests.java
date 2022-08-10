@@ -42,30 +42,18 @@ public class CheckoutTests {
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
-        loginSteps.enterEmail("andreea@mail.com");
-        loginSteps.enterPassword("andreea");
+        loginSteps.enterEmail("fname1lname1@mail.com");
+        loginSteps.enterPassword("parola1");
         loginSteps.clickOnLoginButton();
-        headerSteps.clickOnHomeAndDecorCategory();//
-        categorySteps.clickOnDecorativeAccentsSubcategory();//
-        productsPageSteps.clickOnFirstProduct();//
-        productDetailsSteps.clickOnAddToCartButton();//
-        cartSteps.clickOnProceedToCheckoutButton(); //
+        headerSteps.clickOnHomeAndDecorCategory();
+        categorySteps.clickOnDecorativeAccentsSubcategory();
+        productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.clickOnAddToCartButton();
+        cartSteps.clickOnProceedToCheckoutButton();
 //        headerSteps.clickOnMiniCartButton();
 //        headerSteps.clickOnMiniCartCheckoutButton();
         withTestDataFrom("src/test/resources/csv/checkout.csv").run(checkoutSteps).fullCheckout();
-//        checkoutSteps.enterAddress("Motilor");
-//        checkoutSteps.enterCity("Cluj-Napoca");
-//        checkoutSteps.selectCountry();
-//        checkoutSteps.enterPostalCode("123456");
-//        checkoutSteps.selectRegion();
-//        checkoutSteps.enterTelephoneNumber("0767825364");
-//        checkoutSteps.clickContinueButtonOnBillingPage();
-//        checkoutSteps.clickShippingInformation();
-//        checkoutSteps.clickContinueButtonOnShippingPage();
-//        checkoutSteps.clickFreeShippingMethod();
-//        checkoutSteps.clickFreeShippingButton();
-//        checkoutSteps.clickContinuePaymentInformation();
-//        checkoutSteps.clickPlaceOrderButton();
+
 
           checkoutSteps.thankYouMessageConfirmation("THANK YOU FOR YOUR PURCHASE!");
     }

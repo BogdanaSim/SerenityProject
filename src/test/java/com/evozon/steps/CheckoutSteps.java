@@ -81,17 +81,17 @@ public class CheckoutSteps extends ScenarioSteps {
     public void thankYouMessageConfirmation(String thankYouMessage) {
         Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
     }
-//
-//    }
+
     @Step
     public void fullCheckout() {
         if (!checkoutPage.checkExistenceOfDefaultAddress()) {
             enterAddress(address);
+            selectCountry();
             enterCity(city);
             selectRegion();
             enterPostalCode(postalCode);
             enterTelephoneNumber(telephoneNumber);
-            selectCountry();
+
         }
         clickContinueButtonOnBillingPage();
         clickShippingInformation();
@@ -100,7 +100,5 @@ public class CheckoutSteps extends ScenarioSteps {
         clickFreeShippingButton();
         clickContinuePaymentInformation();
         clickPlaceOrderButton();
-
     }
-
 }

@@ -58,8 +58,6 @@ public class CheckoutPage extends PageObject {
    @FindBy(css= ".col-main .sub-title")
     private WebElementFacade thankYouMessage;
 
-    //    @FindBy(css = ".welcome-msg strong")
-//    private WebElementFacade welcomeTextParagraph;
 
     public void setAddressField(String address) {
         typeInto(addressField, address);
@@ -86,14 +84,10 @@ public class CheckoutPage extends PageObject {
     }
 
     public void clickContinueButtonOnBillingPage() {
-        //continueButtonOnBillingPage.waitUntilVisible();
         clickOn(continueButtonOnBillingPage);
     }
 
     public void clickOnShippingInformation() {
-        //shippingInformation.waitUntilClickable();
-        //shippingInformation.waitUntilEnabled();
-
         clickOn(shippingInformation);
     }
 
@@ -103,7 +97,6 @@ public class CheckoutPage extends PageObject {
     }
 
     public void selectFreeShippingMethod() {
-        //freeShippingMethod.waitUntilVisible();
         if(freeShippingMethod.isPresent())
             clickOn(freeShippingMethod);
     }
@@ -121,7 +114,7 @@ public class CheckoutPage extends PageObject {
         clickOn(PlaceOrderButton);}
 
     public boolean checkExistenceOfDefaultAddress(){
-        return selectAddress.isDisplayed();
+        return selectAddress.isPresent();
     }
 
     public String thankYouMessage() {
