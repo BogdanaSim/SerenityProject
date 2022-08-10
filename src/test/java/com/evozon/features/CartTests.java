@@ -5,15 +5,19 @@ import com.evozon.pages.HeaderPage;
 import com.evozon.pages.ProductDetailsPage;
 import com.evozon.pages.ProductsPage;
 import com.evozon.steps.*;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom(value = "src/test/resources/csv/categories.csv")
 public class CartTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
@@ -37,40 +41,49 @@ public class CartTests {
     @Steps
     private CategorySteps categorySteps;
 
+    public String category, subcategory,quantity;
+
+    @Ignore
     @Test
-    public void addOneProductToCart(){
+    public void addOneProductToCart() {
 
         homepageSteps.navigateToHomepage();
-        headerSteps.clickOnHomeAndDecorCategory();
-        categorySteps.clickOnDecorativeAccentsSubcategory();
+        headerSteps.hoverOnCategoryFromMainMenu(category);
+        headerSteps.clickSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.selectFirstAvailableOptionsForProduct();
         productDetailsSteps.clickOnAddToCartButton();
         productDetailsSteps.checkIfEqualToPriceOfProductToTheFirstProductInCart();
 
     }
 
+
+    @Ignore
     @Test
-    public void removeFirstProductInCart(){
+    public void removeFirstProductInCart() {
         homepageSteps.navigateToHomepage();
-        headerSteps.clickOnHomeAndDecorCategory();
-        categorySteps.clickOnDecorativeAccentsSubcategory();
+        headerSteps.hoverOnCategoryFromMainMenu(category);
+        headerSteps.clickSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.selectFirstAvailableOptionsForProduct();
         productDetailsSteps.clickOnAddToCartButton();
         cartSteps.clickOnRemoveButtonOfTheFirstProductInCart();
         cartSteps.checkIfCartIsEmpty();
 
     }
 
+
     @Test
-    public void updateQuantityOfFirstProductInCart(){
+    public void updateQuantityOfFirstProductInCart() {
         homepageSteps.navigateToHomepage();
-        headerSteps.clickOnHomeAndDecorCategory();
-        categorySteps.clickOnDecorativeAccentsSubcategory();
+        headerSteps.hoverOnCategoryFromMainMenu(category);
+        headerSteps.clickSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
+        productDetailsSteps.selectFirstAvailableOptionsForProduct();
         productDetailsSteps.clickOnAddToCartButton();
-        cartSteps.updateQuantityOfFirstProductInCart("5");
+        cartSteps.updateQuantityOfFirstProductInCart(quantity);
         cartSteps.clickUpdateQuantityButtonOfFirstProductInCart();
-        cartSteps.verifyQuantityWasUpdatedToValue("5");
+        cartSteps.verifyQuantityWasUpdatedToValue(quantity);
     }
 
 }

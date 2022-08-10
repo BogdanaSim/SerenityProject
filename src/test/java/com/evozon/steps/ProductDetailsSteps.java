@@ -30,6 +30,11 @@ public class ProductDetailsSteps {
         productDetailsPage.setQuantityProduct(quantity);
     }
 
+    @Step
+    public void selectFirstAvailableOptionsForProduct(){
+        productDetailsPage.selectFirstAvailableOptionsForProduct();
+    }
+
 
 
 }

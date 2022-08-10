@@ -2,7 +2,10 @@ package com.evozon.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.List;
 
 public class ProductDetailsPage extends PageObject {
 
@@ -14,6 +17,9 @@ public class ProductDetailsPage extends PageObject {
 
     @FindBy(css = "div.qty-wrapper input.qty")
     private WebElementFacade quantityProduct;
+
+    @FindBy(css=".configurable-swatch-list")
+    private List<WebElementFacade> optionsProduct;
 
     public void clickAddToCartButton() {
         clickOn(addToCartButton);
@@ -30,5 +36,12 @@ public class ProductDetailsPage extends PageObject {
 
     public int getQuantityProduct() {
         return Integer.parseInt(quantityProduct.getText());
+    }
+
+    public void selectFirstAvailableOptionsForProduct(){
+        for(WebElementFacade option: optionsProduct){
+            WebElementFacade firstOption=option.find(By.cssSelector("li:not(.not-available) a"));
+            clickOn(firstOption);
+        }
     }
 }
