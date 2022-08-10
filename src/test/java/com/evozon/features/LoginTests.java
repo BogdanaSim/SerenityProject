@@ -3,16 +3,17 @@ package com.evozon.features;
 import com.evozon.steps.HeaderSteps;
 import com.evozon.steps.HomepageSteps;
 import com.evozon.steps.LoginSteps;
-import net.serenitybdd.junit.runners.SerenityRunner;
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 
-@RunWith(SerenityRunner.class)
-
+@RunWith(SerenityParameterizedRunner.class)
+@UseTestDataFrom(value="src/test/java/com/evozon/login/login.csv")
 public class LoginTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
@@ -27,17 +28,17 @@ public class LoginTests {
     private HeaderSteps headerSteps;
 
 
+    private String email, password, firstname,lastname;
 
     @Test
     public void validLoginTest() {
         homePageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
-        loginSteps.enterEmail("andreea@yahoo.com");
-        loginSteps.enterPassword("andreea");
+        loginSteps.enterEmail(email);
+        loginSteps.enterPassword(password);
         loginSteps.clickOnLoginButton();
-        loginSteps.verifyUserIsLoggedIn("andreea denisa stejerean");
-
+        loginSteps.verifyUserIsLoggedIn(firstname+ " " + lastname);
     }
 }
 
