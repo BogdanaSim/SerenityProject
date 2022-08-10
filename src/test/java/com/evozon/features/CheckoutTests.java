@@ -33,7 +33,6 @@ public class CheckoutTests {
 //    @Steps
 //    private ThankYouMessageConfirmation thankYouMessageConfirmation;
 
-
     @Test
     public void checkoutTests() throws InterruptedException {
         homepageSteps.navigateToHomepage();

@@ -34,14 +34,14 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#co-shipping-form .button")
     private WebElementFacade continueButtonOnShippingPage;
 
-    @FindBy(css = "#opc-shipping")
+    @FindBy(css = "#opc-shipping > div.step-title > h2")
     private WebElementFacade shippingInformation;
 
     @FindBy(css = ".sp-methods ul li #s_method_freeshipping_freeshipping")
     private WebElementFacade freeShippingMethod;
 
-    @FindBy(css = "#opc-shipping > div.step-title > h2")
-    private WebElementFacade clickShippingInformation;
+//    @FindBy(css = "#opc-shipping > div.step-title > h2")
+//    private WebElementFacade clickShippingInformation;
 
     @FindBy(css = "#shipping-method-buttons-container .button")
     private WebElementFacade clickFreeShippingButton;
@@ -83,11 +83,12 @@ public class CheckoutPage extends PageObject {
     }
 
     public void clickContinueButtonOnBillingPage() {
+        continueButtonOnBillingPage.waitUntilVisible();
         clickOn(continueButtonOnBillingPage);
     }
 
     public void clickOnShippingInformation() {
-
+        shippingInformation.waitUntilClickable();
         clickOn(shippingInformation);
     }
 
@@ -112,6 +113,7 @@ public class CheckoutPage extends PageObject {
     public void clickPlaceOrderButton() {
         PlaceOrderButton.waitUntilVisible();
         clickOn(PlaceOrderButton);}
+
 
 //    public String thankYouMessage() {
 //        return thankYouMessage.getText();}

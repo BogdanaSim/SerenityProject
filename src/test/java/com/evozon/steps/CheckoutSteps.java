@@ -44,17 +44,13 @@ public class CheckoutSteps {
     public void clickFreeShippingMethod() { checkoutPage.selectFreeShippingMethod();}
     @Step
     public void clickFreeShippingButton() { checkoutPage.setClickFreeShippingButton();}
-
     @Step
     public void clickContinuePaymentInformation() { checkoutPage.clickContinuePaymentInformation();}
-
     @Step
     public void clickPlaceOrderButton() { checkoutPage.clickPlaceOrderButton();}
-
 //    @Step
 //    public void thankYouMessageConfirmation(String thankYouMessage) {
 //        Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
-//
 //    }
 
 }
