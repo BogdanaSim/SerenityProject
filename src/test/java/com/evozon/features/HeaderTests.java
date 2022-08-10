@@ -26,7 +26,7 @@ public class HeaderTests {
     private HomepageSteps homePageSteps;
 
     public String category, subcategory,language;
-    @Ignore
+
     @Test
     public void validHomepageLogo(){
         homePageSteps.navigateToHomepage();
@@ -40,7 +40,7 @@ public class HeaderTests {
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
     }
-    @Ignore
+
     @Test
     public void changeLanguage(){
         homePageSteps.navigateToHomepage();
