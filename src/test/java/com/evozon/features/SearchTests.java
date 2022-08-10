@@ -24,12 +24,14 @@ import org.openqa.selenium.WebDriver;
         @Steps
         private SearchSteps searchSteps;
 
-        private String sku;
+        private String sku,nameProduct;
 
         @Test
     public void searchTest() {
             homepageSteps.navigateToHomepage();
             searchSteps.searchText(sku);
             searchSteps.clickSearchButton();
+            searchSteps.checkSearchedProduct(nameProduct);
+
         }
     }
