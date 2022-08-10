@@ -14,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 public class CheckoutTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
-
     @Steps
     private HomepageSteps homepageSteps;
     @Steps
@@ -31,6 +30,8 @@ public class CheckoutTests {
     private ProductsPageSteps productsPageSteps;
     @Steps
     private ProductDetailsSteps productDetailsSteps;
+//    @Steps
+//    private ThankYouMessageConfirmation thankYouMessageConfirmation;
 
 
     @Test
@@ -38,16 +39,16 @@ public class CheckoutTests {
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
-        loginSteps.enterEmail("andreea@yahoo.com");
+        loginSteps.enterEmail("andreea@mail.com");
         loginSteps.enterPassword("andreea");
         loginSteps.clickOnLoginButton();
-//        headerSteps.clickOnHomeAndDecorCategory();
-//        categorySteps.clickOnDecorativeAccentsSubcategory();
-//        productsPageSteps.clickOnFirstProduct();
-//        productDetailsSteps.clickOnAddToCartButton();
-//        cartSteps.clickOnProceedToCheckoutButton();
-        headerSteps.clickOnMiniCartButton();
-        headerSteps.clickOnMiniCartCheckoutButton();
+        headerSteps.clickOnHomeAndDecorCategory();//
+        categorySteps.clickOnDecorativeAccentsSubcategory();//
+        productsPageSteps.clickOnFirstProduct();//
+        productDetailsSteps.clickOnAddToCartButton();//
+        cartSteps.clickOnProceedToCheckoutButton(); //
+//        headerSteps.clickOnMiniCartButton();
+//        headerSteps.clickOnMiniCartCheckoutButton();
         checkoutSteps.enterAddress("Motilor");
         checkoutSteps.enterCity("Cluj-Napoca");
         checkoutSteps.selectCountry();
@@ -59,5 +60,8 @@ public class CheckoutTests {
         checkoutSteps.clickContinueButtonOnShippingPage();
         checkoutSteps.clickFreeShippingMethod();
         checkoutSteps.clickFreeShippingButton();
+        checkoutSteps.clickContinuePaymentInformation();
+        checkoutSteps.clickPlaceOrderButton();
+      //  checkoutSteps.thankYouMessageConfirmation("THANK YOU FOR YOUR PURCHASE!");
     }
 }

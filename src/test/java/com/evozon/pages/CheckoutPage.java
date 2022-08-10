@@ -46,6 +46,17 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#shipping-method-buttons-container .button")
     private WebElementFacade clickFreeShippingButton;
 
+    @FindBy(css = "#payment-buttons-container > button > span > span")
+    private WebElementFacade clickContinuePaymentInformation;
+
+    @FindBy(css= "#review-buttons-container>button")
+    private WebElementFacade PlaceOrderButton;
+
+//    @FindBy(css= ".col-main .sub-title")
+//    private WebElementFacade thankYouMessage;
+
+    //    @FindBy(css = ".welcome-msg strong")
+//    private WebElementFacade welcomeTextParagraph;
 
     public void setAddressField(String address) {
         typeInto(addressField, address);
@@ -75,7 +86,7 @@ public class CheckoutPage extends PageObject {
         clickOn(continueButtonOnBillingPage);
     }
 
-    public void clickOnShippingInformation(){
+    public void clickOnShippingInformation() {
         continueButtonOnShippingPage.waitUntilVisible();
         clickOn(shippingInformation);
     }
@@ -87,15 +98,21 @@ public class CheckoutPage extends PageObject {
     public void selectFreeShippingMethod() {
         freeShippingMethod.waitUntilVisible();
         clickOn(freeShippingMethod);
-
-
     }
-    public void setClickFreeShippingButton() {
 
+    public void setClickFreeShippingButton() {
         clickOn(clickFreeShippingButton);
     }
 
+    public void clickContinuePaymentInformation(){
+        clickOn(clickContinuePaymentInformation);
+    }
 
+    public void clickPlaceOrderButton() {
+        PlaceOrderButton.waitUntilVisible();
+        clickOn(PlaceOrderButton);}
 
-
+//    public String thankYouMessage() {
+//        return thankYouMessage.getText();}
 }
+

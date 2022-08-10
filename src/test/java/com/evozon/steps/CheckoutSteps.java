@@ -3,9 +3,11 @@ package com.evozon.steps;
 import com.evozon.pages.CheckoutPage;
 import com.evozon.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
+import org.junit.Assert;
 
 public class CheckoutSteps {
     private CheckoutPage checkoutPage;
+    //private ThankYouMessage thankYouMessage;
 
     @Step
     public void enterAddress(String address){
@@ -42,5 +44,17 @@ public class CheckoutSteps {
     public void clickFreeShippingMethod() { checkoutPage.selectFreeShippingMethod();}
     @Step
     public void clickFreeShippingButton() { checkoutPage.setClickFreeShippingButton();}
+
+    @Step
+    public void clickContinuePaymentInformation() { checkoutPage.clickContinuePaymentInformation();}
+
+    @Step
+    public void clickPlaceOrderButton() { checkoutPage.clickPlaceOrderButton();}
+
+//    @Step
+//    public void thankYouMessageConfirmation(String thankYouMessage) {
+//        Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
+//
+//    }
 
 }

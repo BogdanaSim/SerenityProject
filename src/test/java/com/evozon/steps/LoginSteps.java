@@ -22,7 +22,5 @@ public class LoginSteps {
     public void verifyUserIsLoggedIn(String userName) {
         Assert.assertEquals("Hello, " + userName + "!",
                 accountPage.getWelcomeText());
-
-    }
-
+        }
     }
