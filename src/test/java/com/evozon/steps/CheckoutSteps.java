@@ -77,9 +77,10 @@ public class CheckoutSteps extends ScenarioSteps {
         checkoutPage.clickPlaceOrderButton();
     }
 
-    //    @Step
-//    public void thankYouMessageConfirmation(String thankYouMessage) {
-//        Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
+    @Step
+    public void thankYouMessageConfirmation(String thankYouMessage) {
+        Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
+    }
 //
 //    }
     @Step

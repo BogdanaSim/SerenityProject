@@ -35,8 +35,7 @@ public class CheckoutTests {
     private ProductsPageSteps productsPageSteps;
     @Steps
     private ProductDetailsSteps productDetailsSteps;
-//    @Steps
-//    private ThankYouMessageConfirmation thankYouMessageConfirmation;
+
 
     @Test
     public void checkoutTests() throws InterruptedException, IOException {
@@ -67,6 +66,7 @@ public class CheckoutTests {
 //        checkoutSteps.clickFreeShippingButton();
 //        checkoutSteps.clickContinuePaymentInformation();
 //        checkoutSteps.clickPlaceOrderButton();
-        //  checkoutSteps.thankYouMessageConfirmation("THANK YOU FOR YOUR PURCHASE!");
+
+          checkoutSteps.thankYouMessageConfirmation("THANK YOU FOR YOUR PURCHASE!");
     }
 }

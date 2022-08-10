@@ -55,8 +55,8 @@ public class CheckoutPage extends PageObject {
     @FindBy(css= "select#billing-address-select")
     private WebElementFacade selectAddress;
 
-//    @FindBy(css= ".col-main .sub-title")
-//    private WebElementFacade thankYouMessage;
+   @FindBy(css= ".col-main .sub-title")
+    private WebElementFacade thankYouMessage;
 
     //    @FindBy(css = ".welcome-msg strong")
 //    private WebElementFacade welcomeTextParagraph;
@@ -124,7 +124,7 @@ public class CheckoutPage extends PageObject {
         return selectAddress.isDisplayed();
     }
 
-//    public String thankYouMessage() {
-//        return thankYouMessage.getText();}
+    public String thankYouMessage() {
+        return thankYouMessage.getText();}
 }
 
