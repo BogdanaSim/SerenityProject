@@ -53,8 +53,6 @@ public class CheckoutTests {
 //        headerSteps.clickOnMiniCartButton();
 //        headerSteps.clickOnMiniCartCheckoutButton();
         withTestDataFrom("src/test/resources/csv/checkout.csv").run(checkoutSteps).fullCheckout();
-
-
-          checkoutSteps.thankYouMessageConfirmation("THANK YOU FOR YOUR PURCHASE!");
+          checkoutSteps.thankYouMessageConfirmation();
     }
 }

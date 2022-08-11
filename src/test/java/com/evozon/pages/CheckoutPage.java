@@ -34,6 +34,9 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#co-shipping-form .button")
     private WebElementFacade continueButtonOnShippingPage;
 
+//    @FindBy(css="#opc-shipping .step-title a")
+//    private WebElementFacade editButtonOnShippingPage;
+
     @FindBy(css = "li[id='opc-shipping'][class*='section allow']")
     private WebElementFacade shippingInformation;
 
@@ -110,14 +113,22 @@ public class CheckoutPage extends PageObject {
     }
 
     public void clickPlaceOrderButton() {
-        PlaceOrderButton.waitUntilVisible();
+        //PlaceOrderButton.waitUntilVisible();
         clickOn(PlaceOrderButton);}
 
     public boolean checkExistenceOfDefaultAddress(){
         return selectAddress.isPresent();
     }
 
+//    public void clickEditButtonOnShippingPage() {
+//        editButtonOnShippingPage.waitUntilClickable();
+//        clickOn(editButtonOnShippingPage);
+//        }
+
     public String thankYouMessage() {
         return thankYouMessage.getText();}
+
 }
+
+
 

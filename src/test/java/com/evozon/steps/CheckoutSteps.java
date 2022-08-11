@@ -9,7 +9,6 @@ import org.junit.Assert;
 
 public class CheckoutSteps extends ScenarioSteps {
     private CheckoutPage checkoutPage;
-    //private ThankYouMessage thankYouMessage;
     private String address, city, region, postalCode, telephoneNumber, country;
 
     @Step
@@ -51,7 +50,10 @@ public class CheckoutSteps extends ScenarioSteps {
     public void clickContinueButtonOnShippingPage() {
         checkoutPage.clickContinueButtonOnShippingPage();
     }
-
+//    @Step
+//    public void clickEditButtonOnShippingPage() {
+//        checkoutPage.clickEditButtonOnShippingPage();
+//    }
     @Step
     public void clickShippingInformation() {
         checkoutPage.clickOnShippingInformation();
@@ -78,7 +80,7 @@ public class CheckoutSteps extends ScenarioSteps {
     }
 
     @Step
-    public void thankYouMessageConfirmation(String thankYouMessage) {
+    public void thankYouMessageConfirmation() {
         Assert.assertEquals("THANK YOU FOR YOUR PURCHASE!", checkoutPage.thankYouMessage());
     }
 
@@ -94,6 +96,7 @@ public class CheckoutSteps extends ScenarioSteps {
 
         }
         clickContinueButtonOnBillingPage();
+        //clickEditButtonOnShippingPage();
         clickShippingInformation();
         clickContinueButtonOnShippingPage();
         clickFreeShippingMethod();
@@ -101,4 +104,5 @@ public class CheckoutSteps extends ScenarioSteps {
         clickContinuePaymentInformation();
         clickPlaceOrderButton();
     }
+
 }
