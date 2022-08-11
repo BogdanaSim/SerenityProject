@@ -5,17 +5,12 @@ import com.evozon.steps.HomepageSteps;
 import com.evozon.steps.LoginSteps;
 import com.evozon.steps.RegisterSteps;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
-import static java.util.UUID.randomUUID;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value="src/test/resources/csv/file.csv")

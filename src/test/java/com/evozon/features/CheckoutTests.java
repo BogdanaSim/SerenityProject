@@ -1,17 +1,13 @@
 package com.evozon.features;
 
 import com.evozon.steps.*;
-import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
 import java.io.IOException;
-
 import static net.thucydides.core.steps.stepdata.StepData.withTestDataFrom;
 
 @RunWith(SerenityRunner.class)

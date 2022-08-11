@@ -21,6 +21,4 @@ public class HomepageTests {
         homePageSteps.navigateToHomepage();
         homePageSteps.checkTitleHomePage();
     }
-
-
 }

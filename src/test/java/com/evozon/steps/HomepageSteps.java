@@ -7,7 +7,6 @@ import org.junit.Assert;
 
 public class HomepageSteps {
 
-
     private HomePage homePage;
 
 
@@ -21,6 +20,4 @@ public class HomepageSteps {
         String titleHomePage= homePage.getTitleHomePage();
         Assert.assertTrue(titleHomePage.equalsIgnoreCase("Madison Island"));
     }
-
-
 }

@@ -35,15 +35,8 @@ public class RegisterSteps {
         registerPage.setConfirmPasswordField(password);
     }
 
-
     @Step
     public void clickRegisterButton(){
         registerPage.clickRegisterButton();
     }
-
-
-
-
-
-
 }

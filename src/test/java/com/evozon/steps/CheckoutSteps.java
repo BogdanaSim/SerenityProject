@@ -50,10 +50,7 @@ public class CheckoutSteps extends ScenarioSteps {
     public void clickContinueButtonOnShippingPage() {
         checkoutPage.clickContinueButtonOnShippingPage();
     }
-//    @Step
-//    public void clickEditButtonOnShippingPage() {
-//        checkoutPage.clickEditButtonOnShippingPage();
-//    }
+
     @Step
     public void clickShippingInformation() {
         checkoutPage.clickOnShippingInformation();
@@ -93,8 +90,8 @@ public class CheckoutSteps extends ScenarioSteps {
             selectRegion();
             enterPostalCode(postalCode);
             enterTelephoneNumber(telephoneNumber);
-
         }
+
         clickContinueButtonOnBillingPage();
         //clickEditButtonOnShippingPage();
         clickShippingInformation();
@@ -104,5 +101,4 @@ public class CheckoutSteps extends ScenarioSteps {
         clickContinuePaymentInformation();
         clickPlaceOrderButton();
     }
-
 }
