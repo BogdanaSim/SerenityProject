@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LoginSteps {
+public class LoginSteps extends BaseSteps{
 
     private LoginPage loginPage;
     private AccountPage accountPage;

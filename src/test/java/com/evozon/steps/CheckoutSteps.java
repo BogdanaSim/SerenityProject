@@ -1,13 +1,10 @@
 package com.evozon.steps;
 
 import com.evozon.pages.CheckoutPage;
-import com.evozon.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
-public class CheckoutSteps extends ScenarioSteps {
+public class CheckoutSteps extends BaseSteps {
     private CheckoutPage checkoutPage;
     private String address, city, region, postalCode, telephoneNumber, country;
 

@@ -14,25 +14,16 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value="src/test/resources/csv/login.csv")
-public class LoginTests {
-    @Managed(uniqueSession = true)
-    private WebDriver driver;
+public class LoginTests extends BaseTest {
 
     @Steps
     private LoginSteps loginSteps;
-
-    @Steps
-    private HomepageSteps homePageSteps;
-
-    @Steps
-    private HeaderSteps headerSteps;
 
 
     private String email, password, firstname,lastname;
 
     @Test
     public void validLoginTest() {
-        homePageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
         loginSteps.enterEmail(email);

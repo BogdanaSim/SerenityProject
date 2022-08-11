@@ -3,7 +3,7 @@ package com.evozon.steps;
 import com.evozon.pages.CategoryPage;
 import net.thucydides.core.annotations.Step;
 
-public class CategorySteps {
+public class CategorySteps extends BaseSteps{
     private CategoryPage categoryPage;
 
     @Step

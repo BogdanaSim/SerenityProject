@@ -1,11 +1,10 @@
 package com.evozon.steps;
 
 import com.evozon.pages.AccountPage;
-import com.evozon.pages.HomePage;
 import com.evozon.pages.RegisterPage;
 import net.thucydides.core.annotations.Step;
 
-public class RegisterSteps {
+public class RegisterSteps extends BaseSteps{
 
     private RegisterPage registerPage;
     private AccountPage accountPage;

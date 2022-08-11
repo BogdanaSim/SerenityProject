@@ -1,14 +1,12 @@
 package com.evozon.features;
 
 import com.evozon.steps.*;
-import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Step;
+
 import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
+
 
 import java.io.IOException;
 
@@ -16,13 +14,7 @@ import static net.thucydides.core.steps.stepdata.StepData.withTestDataFrom;
 
 @RunWith(SerenityRunner.class)
 
-public class CheckoutTests {
-    @Managed(uniqueSession = true)
-    private WebDriver driver;
-    @Steps
-    private HomepageSteps homepageSteps;
-    @Steps
-    private HeaderSteps headerSteps;
+public class CheckoutTests extends BaseTest {
     @Steps
     private CheckoutSteps checkoutSteps;
     @Steps
@@ -38,8 +30,7 @@ public class CheckoutTests {
 
 
     @Test
-    public void checkoutTests() throws InterruptedException, IOException {
-        homepageSteps.navigateToHomepage();
+    public void checkoutAfterAddingProductToCart() throws IOException {
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
         loginSteps.enterEmail("fname1lname1@mail.com");
@@ -50,9 +41,22 @@ public class CheckoutTests {
         productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.clickOnAddToCartButton();
         cartSteps.clickOnProceedToCheckoutButton();
-//        headerSteps.clickOnMiniCartButton();
-//        headerSteps.clickOnMiniCartCheckoutButton();
         withTestDataFrom("src/test/resources/csv/checkout.csv").run(checkoutSteps).fullCheckout();
-          checkoutSteps.thankYouMessageConfirmation();
+        checkoutSteps.thankYouMessageConfirmation();
     }
+
+
+    @Test
+    public void checkoutFromMiniCart() throws IOException {
+        headerSteps.clickOnAccountLink();
+        headerSteps.clickOnLogInLink();
+        loginSteps.enterEmail("fname1lname1@mail.com");
+        loginSteps.enterPassword("parola1");
+        loginSteps.clickOnLoginButton();
+        headerSteps.clickOnMiniCartButton();
+        headerSteps.clickOnMiniCartCheckoutButton();
+        withTestDataFrom("src/test/resources/csv/checkout.csv").run(checkoutSteps).fullCheckout();
+        checkoutSteps.thankYouMessageConfirmation();
+    }
+
 }

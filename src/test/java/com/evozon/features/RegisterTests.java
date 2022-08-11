@@ -19,13 +19,7 @@ import static java.util.UUID.randomUUID;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value="src/test/resources/csv/file.csv")
-public class RegisterTests {
-    @Managed(uniqueSession = true)
-    private WebDriver driver;
-    @Steps
-    private HomepageSteps homePageSteps;
-    @Steps
-    private HeaderSteps headerSteps;
+public class RegisterTests extends BaseTest {
     @Steps
     private RegisterSteps registerSteps;
     @Steps
@@ -35,12 +29,10 @@ public class RegisterTests {
 
     @Test
     public void registerTest(){
-        homePageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnRegisterLink();
         registerSteps.enterFirstName(firstname);
         registerSteps.enterLastName(lastname);
-//        registerSteps.enterEmail(randomUUID() +"@mail.com");
         registerSteps.enterEmail(email);
         registerSteps.enterPassword(password);
         registerSteps.confirmPassword(password);

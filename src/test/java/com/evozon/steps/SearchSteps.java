@@ -3,10 +3,9 @@ package com.evozon.steps;
 import com.evozon.pages.ProductsPage;
 import com.evozon.pages.SearchPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
-public class SearchSteps extends ScenarioSteps {
+public class SearchSteps extends BaseSteps {
 
     private SearchPage searchPage;
     private ProductsPage productsPage;

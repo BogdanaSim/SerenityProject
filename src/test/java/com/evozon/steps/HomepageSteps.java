@@ -1,14 +1,11 @@
 package com.evozon.steps;
 
 
-import com.evozon.pages.HomePage;
+
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-public class HomepageSteps {
-
-
-    private HomePage homePage;
+public class HomepageSteps extends BaseSteps {
 
 
     @Step

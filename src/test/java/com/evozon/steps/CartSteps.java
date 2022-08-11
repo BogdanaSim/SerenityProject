@@ -2,10 +2,9 @@ package com.evozon.steps;
 
 import com.evozon.pages.CartPage;
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
-public class CartSteps {
+public class CartSteps extends BaseSteps{
 
     private CartPage cartPage;
 

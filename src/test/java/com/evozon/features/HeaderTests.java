@@ -15,35 +15,27 @@ import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/test/resources/csv/header.csv")
-public class HeaderTests {
-    @Managed(uniqueSession = true)
-    private WebDriver driver;
-
-    @Steps
-    private HeaderSteps headerSteps;
-
-    @Steps
-    private HomepageSteps homePageSteps;
+public class HeaderTests extends BaseTest{
 
     public String category, subcategory,language;
 
     @Test
     public void validHomepageLogo(){
-        homePageSteps.navigateToHomepage();
+        homepageSteps.navigateToHomepage();
         headerSteps.clickOnHomepageLogo();
-        homePageSteps.checkTitleHomePage();
+        homepageSteps.checkTitleHomePage();
     }
 
 
     public void validLogInLink(){
-        homePageSteps.navigateToHomepage();
+        homepageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
     }
 
     @Test
     public void changeLanguage(){
-        homePageSteps.navigateToHomepage();
+        homepageSteps.navigateToHomepage();
         headerSteps.clickOnLanguageOption(language);
         headerSteps.verifyLanguagePage(language);
     }
@@ -51,7 +43,7 @@ public class HeaderTests {
 
     @Test
     public void clickASubcategoryFromMainMenu(){
-        homePageSteps.navigateToHomepage();
+        homepageSteps.navigateToHomepage();
         headerSteps.hoverOnCategoryFromMainMenu(category);
         headerSteps.clickSubcategoryFromMainMenu(category,subcategory);
         Assert.assertTrue(driver.getTitle().equalsIgnoreCase(subcategory+ " - "+category));

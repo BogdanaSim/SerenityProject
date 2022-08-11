@@ -17,27 +17,21 @@ import java.io.IOException;
 import static net.thucydides.core.steps.stepdata.StepData.withTestDataFrom;
 
 @RunWith(SerenityRunner.class)
-   // @UseTestDataFrom(value="src/test/resources/csv/search.csv")
 
-    public class SearchTests {
-        @Managed(uniqueSession = true )
-        private WebDriver driver;
+public class SearchTests extends BaseTest {
 
-        @Steps
-        private HomepageSteps homepageSteps;
+    @Steps
+    private SearchSteps searchSteps;
 
-        @Steps
-        private SearchSteps searchSteps;
+    // private String sku,nameProduct;
 
-       // private String sku,nameProduct;
-
-        @Test
+    @Test
     public void searchTest() throws IOException {
-            homepageSteps.navigateToHomepage();
-            withTestDataFrom("src/test/resources/csv/search.csv").run(searchSteps).searchSteps();
+        homepageSteps.navigateToHomepage();
+        withTestDataFrom("src/test/resources/csv/search.csv").run(searchSteps).searchSteps();
 //            searchSteps.searchText();
 //            searchSteps.clickSearchButton();
 //            searchSteps.checkSearchedProduct();
-        }
-
     }
+
+}

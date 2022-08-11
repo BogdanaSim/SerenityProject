@@ -1,16 +1,15 @@
 package com.evozon.steps;
 
-import com.evozon.pages.HeaderPage;
+
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
-import org.openqa.selenium.By;
+
 
 import java.util.List;
 
-public class HeaderSteps {
+public class HeaderSteps extends BaseSteps{
 
-    private HeaderPage headerPage;
 
     @Step
     public void clickOnHomepageLogo(){ headerPage.clickOnHomepageLogo(); }
@@ -61,4 +60,14 @@ public class HeaderSteps {
     public void clickOnMiniCartCheckoutButton(){
         headerPage.clickMiniCartCheckoutButton();
     }
+
+    @Step
+    public void selectSubcategoryFromMainMenu(String category,String subcategory){
+        hoverOnCategoryFromMainMenu(category);
+        clickSubcategoryFromMainMenu(category,subcategory);
+    }
+
+
+
+
 }

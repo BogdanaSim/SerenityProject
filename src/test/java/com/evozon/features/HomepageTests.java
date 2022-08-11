@@ -9,17 +9,12 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class HomepageTests {
-    @Managed(uniqueSession = true)
-    private WebDriver driver;
-
-    @Steps
-    private HomepageSteps homePageSteps;
+public class HomepageTests extends BaseTest{
 
     @Test
     public void validHomePageTitle(){
-        homePageSteps.navigateToHomepage();
-        homePageSteps.checkTitleHomePage();
+        homepageSteps.navigateToHomepage();
+        homepageSteps.checkTitleHomePage();
     }
 
 

@@ -5,7 +5,7 @@ import com.evozon.pages.ProductDetailsPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-public class ProductDetailsSteps {
+public class ProductDetailsSteps extends BaseSteps{
 
     private ProductDetailsPage productDetailsPage;
 
@@ -35,6 +35,11 @@ public class ProductDetailsSteps {
         productDetailsPage.selectFirstAvailableOptionsForProduct();
     }
 
+    @Step
+    public void addProductFromDetailsPage(){
+        selectFirstAvailableOptionsForProduct();
+        clickOnAddToCartButton();
+    }
 
 
 }
