@@ -29,7 +29,6 @@ public class HeaderPage extends PageObject {
     @FindBy(css="a[title='Register']")
     private WebElementFacade registerLink;
 
-
     @FindBy(css=".nav-primary >li:nth-child(4)")
     private WebElementFacade selectHomeAndDecor;
 
@@ -88,7 +87,6 @@ public class HeaderPage extends PageObject {
 
         WebElementFacade elementSubcategory=elementSubcategories.stream().filter(s->(s.getText().equalsIgnoreCase(subcategory))).findFirst().get();
         clickOn(elementSubcategory);
-
     }
 
     public void clickMiniCartButton(){

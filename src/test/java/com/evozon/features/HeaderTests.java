@@ -26,7 +26,6 @@ public class HeaderTests extends BaseTest{
         homepageSteps.checkTitleHomePage();
     }
 
-
     public void validLogInLink(){
         homepageSteps.navigateToHomepage();
         headerSteps.clickOnAccountLink();
@@ -39,7 +38,6 @@ public class HeaderTests extends BaseTest{
         headerSteps.clickOnLanguageOption(language);
         headerSteps.verifyLanguagePage(language);
     }
-
 
     @Test
     public void clickASubcategoryFromMainMenu(){

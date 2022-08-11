@@ -1,10 +1,8 @@
 package com.evozon.pages;
 
 
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("http://qa3magento.dev.evozon.com/")
 public class HomePage  extends PageObject {

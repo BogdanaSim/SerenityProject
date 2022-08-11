@@ -47,10 +47,7 @@ public class CheckoutSteps extends BaseSteps {
     public void clickContinueButtonOnShippingPage() {
         checkoutPage.clickContinueButtonOnShippingPage();
     }
-//    @Step
-//    public void clickEditButtonOnShippingPage() {
-//        checkoutPage.clickEditButtonOnShippingPage();
-//    }
+
     @Step
     public void clickShippingInformation() {
         checkoutPage.clickOnShippingInformation();
@@ -90,8 +87,8 @@ public class CheckoutSteps extends BaseSteps {
             selectRegion();
             enterPostalCode(postalCode);
             enterTelephoneNumber(telephoneNumber);
-
         }
+
         clickContinueButtonOnBillingPage();
         //clickEditButtonOnShippingPage();
         clickShippingInformation();
@@ -101,5 +98,4 @@ public class CheckoutSteps extends BaseSteps {
         clickContinuePaymentInformation();
         clickPlaceOrderButton();
     }
-
 }

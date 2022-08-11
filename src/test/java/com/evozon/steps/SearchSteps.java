@@ -13,13 +13,17 @@ public class SearchSteps extends BaseSteps {
     private String sku, nameProduct;
 
     @Step
-    public void searchText() {searchPage.setSearchField(sku);}
+    public void searchText() {
+        searchPage.setSearchField(sku);
+    }
 
     @Step
-    public void clickSearchButton(){searchPage.clickOnSearchButton();}
+    public void clickSearchButton() {
+        searchPage.clickOnSearchButton();
+    }
 
     @Step
-    public void checkSearchedProduct(){
+    public void checkSearchedProduct() {
         Assert.assertTrue(nameProduct.equalsIgnoreCase(productsPage.getNameOfFirstProductOnPage()));
     }
 
@@ -29,5 +33,4 @@ public class SearchSteps extends BaseSteps {
         clickSearchButton();
         checkSearchedProduct();
     }
-
 }

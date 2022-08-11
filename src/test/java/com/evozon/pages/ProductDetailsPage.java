@@ -23,7 +23,6 @@ public class ProductDetailsPage extends PageObject {
 
     public void clickAddToCartButton() {
         clickOn(addToCartButton);
-
     }
 
     public double getProductPrice() {

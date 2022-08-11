@@ -34,15 +34,8 @@ public class RegisterSteps extends BaseSteps{
         registerPage.setConfirmPasswordField(password);
     }
 
-
     @Step
     public void clickRegisterButton(){
         registerPage.clickRegisterButton();
     }
-
-
-
-
-
-
 }

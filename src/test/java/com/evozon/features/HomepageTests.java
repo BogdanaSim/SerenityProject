@@ -16,6 +16,4 @@ public class HomepageTests extends BaseTest{
         homepageSteps.navigateToHomepage();
         homepageSteps.checkTitleHomePage();
     }
-
-
 }
