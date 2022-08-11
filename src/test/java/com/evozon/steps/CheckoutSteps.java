@@ -90,7 +90,6 @@ public class CheckoutSteps extends BaseSteps {
         }
 
         clickContinueButtonOnBillingPage();
-        //clickEditButtonOnShippingPage();
         clickShippingInformation();
         clickContinueButtonOnShippingPage();
         clickFreeShippingMethod();

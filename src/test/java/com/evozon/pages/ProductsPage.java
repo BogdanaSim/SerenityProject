@@ -14,8 +14,9 @@ public class ProductsPage extends PageObject{
     public void clickOnFirstProduct() {clickOn(firstProductOnPageImage);}
 
     public String getNameOfFirstProductOnPage(){
-        String name=firstProductOnPageName.getText();
-        return firstProductOnPageName.getText();
+        if(firstProductOnPageImage.isPresent())
+            return firstProductOnPageName.getText();
+        return "You're search returns no results.";
     }
 }
 

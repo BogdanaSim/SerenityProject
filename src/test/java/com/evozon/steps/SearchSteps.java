@@ -24,7 +24,7 @@ public class SearchSteps extends BaseSteps {
 
     @Step
     public void checkSearchedProduct() {
-        Assert.assertTrue(nameProduct.equalsIgnoreCase(productsPage.getNameOfFirstProductOnPage()));
+        Assert.assertEquals(nameProduct, productsPage.getNameOfFirstProductOnPage());
     }
 
     @Step

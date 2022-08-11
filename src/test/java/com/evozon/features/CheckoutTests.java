@@ -2,8 +2,8 @@ package com.evozon.features;
 
 import com.evozon.steps.*;
 import net.serenitybdd.junit.runners.SerenityRunner;
-
 import net.thucydides.core.annotations.Steps;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -45,7 +45,7 @@ public class CheckoutTests extends BaseTest {
         checkoutSteps.thankYouMessageConfirmation();
     }
 
-
+@Ignore
     @Test
     public void checkoutFromMiniCart() throws IOException {
         headerSteps.clickOnAccountLink();

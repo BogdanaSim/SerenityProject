@@ -14,6 +14,10 @@ public class LoginPage extends PageObject {
     @FindBy(id="send2")
     private WebElementFacade loginButton;
 
+    @FindBy(css="li.error-msg span")
+    private WebElementFacade invalidLoginMessage;
+
+
     public void setEmailField(String value){
         typeInto(emailField, value);
     }
@@ -23,5 +27,9 @@ public class LoginPage extends PageObject {
     }
 
     public void clickLoginButton(){ clickOn(loginButton);
+    }
+
+    public String getInvalidLoginMessage(){
+        return invalidLoginMessage.getText();
     }
 }
