@@ -3,16 +3,11 @@ package com.evozon.pages;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class HeaderPage extends PageObject {
     @FindBy(css="a.logo")
@@ -30,10 +25,10 @@ public class HeaderPage extends PageObject {
     private WebElementFacade registerLink;
 
     @FindBy(css=".nav-primary >li:nth-child(4)")
-    private WebElementFacade selectHomeAndDecor;
+    private WebElementFacade homeAndDecorCategoryLink;
 
     @FindBy(css="#nav ol.nav-primary li.level0.parent")
-    private List<WebElementFacade> mainMenuCategories;
+    private List<WebElementFacade> mainMenuCategoriesList;
 
     @FindBy(css=".header-minicart > a")
     private WebElementFacade miniCartButton;
@@ -65,10 +60,10 @@ public class HeaderPage extends PageObject {
 
 
 
-    public void clickHomeAndDeco() { clickOn(selectHomeAndDecor);}
+    public void clickHomeAndDeco() { clickOn(homeAndDecorCategoryLink);}
 
     public WebElementFacade getCategoryFromMainMenu(String category){
-        return mainMenuCategories.stream().filter(c->(c.findElement(By.cssSelector(" a.has-children")).getText().equalsIgnoreCase(category))).findFirst().get();
+        return mainMenuCategoriesList.stream().filter(c->(c.findElement(By.cssSelector(" a.has-children")).getText().equalsIgnoreCase(category))).findFirst().get();
 
     }
 

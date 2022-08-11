@@ -26,8 +26,8 @@ public class ProductDetailsSteps extends BaseSteps{
 
     @Step
     public void changeQuantityOfTheProductOnTheDetailsPage(String quantity){
-        previousQuantity= productDetailsPage.getQuantityProduct();
-        productDetailsPage.setQuantityProduct(quantity);
+        previousQuantity= productDetailsPage.getQuantityProductField();
+        productDetailsPage.setQuantityProductField(quantity);
     }
 
     @Step

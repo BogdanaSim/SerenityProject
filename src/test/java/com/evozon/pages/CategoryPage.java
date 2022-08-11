@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class CategoryPage extends PageObject {
     @FindBy(css=".catblocks li:last-child a")
-    private WebElementFacade selectDecorativeAccents;
+    private WebElementFacade decorativeAccentsSubcategoryLink;
 
-    public void clickDecorativeAccents() { clickOn(selectDecorativeAccents);}
+    public void clickDecorativeAccentsSubcategory() { clickOn(decorativeAccentsSubcategoryLink);}
 }

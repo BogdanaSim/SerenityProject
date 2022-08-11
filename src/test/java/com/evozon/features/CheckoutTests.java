@@ -1,6 +1,7 @@
 package com.evozon.features;
 
 import com.evozon.steps.*;
+import com.evozon.utils.Constants;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 import org.junit.Ignore;
@@ -33,8 +34,8 @@ public class CheckoutTests extends BaseTest {
     public void checkoutAfterAddingProductToCart() throws IOException {
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
-        loginSteps.enterEmail("fname1lname1@mail.com");
-        loginSteps.enterPassword("parola1");
+        loginSteps.enterEmail(Constants.EMAIL_CHECKOUT);
+        loginSteps.enterPassword(Constants.PASSWORD_CHECKOUT);
         loginSteps.clickOnLoginButton();
         headerSteps.clickOnHomeAndDecorCategory();
         categorySteps.clickOnDecorativeAccentsSubcategory();
@@ -45,18 +46,21 @@ public class CheckoutTests extends BaseTest {
         checkoutSteps.thankYouMessageConfirmation();
     }
 
-@Ignore
     @Test
     public void checkoutFromMiniCart() throws IOException {
         headerSteps.clickOnAccountLink();
         headerSteps.clickOnLogInLink();
-        loginSteps.enterEmail("fname1lname1@mail.com");
-        loginSteps.enterPassword("parola1");
+        loginSteps.enterEmail(Constants.EMAIL_CHECKOUT);
+        loginSteps.enterPassword(Constants.PASSWORD_CHECKOUT);
         loginSteps.clickOnLoginButton();
         headerSteps.clickOnMiniCartButton();
         headerSteps.clickOnMiniCartCheckoutButton();
         withTestDataFrom("src/test/resources/csv/checkout.csv").run(checkoutSteps).fullCheckout();
         checkoutSteps.thankYouMessageConfirmation();
+
     }
+
+
+
 
 }

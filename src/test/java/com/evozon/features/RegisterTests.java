@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(value="src/test/resources/csv/file.csv")
+@UseTestDataFrom(value="src/test/resources/csv/register.csv")
 public class RegisterTests extends BaseTest {
     @Steps
     private RegisterSteps registerSteps;

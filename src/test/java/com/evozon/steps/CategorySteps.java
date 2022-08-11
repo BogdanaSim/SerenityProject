@@ -8,6 +8,6 @@ public class CategorySteps extends BaseSteps{
 
     @Step
     public void clickOnDecorativeAccentsSubcategory(){
-        categoryPage.clickDecorativeAccents();
+        categoryPage.clickDecorativeAccentsSubcategory();
     }
 }

@@ -12,7 +12,7 @@ public class CartPage extends PageObject {
     private WebElementFacade nameOfFirstProductInCart;
 
     @FindBy(css="table#shopping-cart-table tbody tr")
-    private List<WebElementFacade> productsInCart;
+    private List<WebElementFacade> productsInCartList;
 
     @FindBy(css="div.cart-totals button.btn-proceed-checkout")
     private WebElementFacade checkoutButton;
@@ -24,7 +24,7 @@ public class CartPage extends PageObject {
     private WebElementFacade titleCartPage;
 
     @FindBy(css=".product-cart-actions .input-text.qty")
-    private WebElementFacade quantityFirstProductInCart;
+    private WebElementFacade quantityFieldOfFirstProductInCart;
 
     @FindBy(css=".product-cart-actions .input-text.qty")
     private WebElementFacade updateQuantityButtonOfFirstProductInCart;
@@ -50,15 +50,12 @@ public class CartPage extends PageObject {
         return titleCartPage.getText();
     }
 
-    public void setQuantityFirstProductInCart(String quantity){
-        typeInto(quantityFirstProductInCart,quantity);
+    public void setQuantityFieldOfFirstProductInCart(String quantity){
+        typeInto(quantityFieldOfFirstProductInCart,quantity);
     }
 
     public void clickUpdateQuantityButtonOfFirstProductInCart() {
         clickOn(updateQuantityButtonOfFirstProductInCart);
     }
 
-    public void clickEditLinkOfFirstProductInCart(){
-        clickOn(editButtonOfFirstProductInCart);
-    }
 }

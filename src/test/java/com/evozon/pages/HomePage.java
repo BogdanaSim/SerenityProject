@@ -13,7 +13,6 @@ public class HomePage  extends PageObject {
 
     public void refreshHomePage(){
         getDriver().navigate().refresh();
-       // waitForWithRefresh();
     }
 
     public void goForward(){

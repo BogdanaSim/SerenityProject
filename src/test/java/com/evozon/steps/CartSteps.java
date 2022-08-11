@@ -32,7 +32,7 @@ public class CartSteps extends BaseSteps{
     @Step
     public void updateQuantityOfFirstProductInCart(String quantity){
         quantityOfFirstProductInCart=quantity;
-        cartPage.setQuantityFirstProductInCart(quantity);
+        cartPage.setQuantityFieldOfFirstProductInCart(quantity);
 
     }
 

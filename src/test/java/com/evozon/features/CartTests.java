@@ -40,7 +40,6 @@ public class CartTests extends BaseTest{
     }
 
 
-
     @Test
     public void removeFirstProductInCart() {
 

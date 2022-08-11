@@ -16,10 +16,10 @@ public class ProductDetailsPage extends PageObject {
     private WebElementFacade priceProduct;
 
     @FindBy(css = "div.qty-wrapper input.qty")
-    private WebElementFacade quantityProduct;
+    private WebElementFacade quantityProductField;
 
     @FindBy(css=".configurable-swatch-list")
-    private List<WebElementFacade> optionsProduct;
+    private List<WebElementFacade> optionsProductList;
 
     public void clickAddToCartButton() {
         clickOn(addToCartButton);
@@ -29,16 +29,16 @@ public class ProductDetailsPage extends PageObject {
         return Double.parseDouble(priceProduct.getText().substring(1));
     }
 
-    public void setQuantityProduct(String quantity){
-        typeInto(quantityProduct,quantity);
+    public void setQuantityProductField(String quantity){
+        typeInto(quantityProductField,quantity);
     }
 
-    public int getQuantityProduct() {
-        return Integer.parseInt(quantityProduct.getText());
+    public int getQuantityProductField() {
+        return Integer.parseInt(quantityProductField.getText());
     }
 
     public void selectFirstAvailableOptionsForProduct(){
-        for(WebElementFacade option: optionsProduct){
+        for(WebElementFacade option: optionsProductList){
             WebElementFacade firstOption=option.find(By.cssSelector("li:not(.not-available) a"));
             clickOn(firstOption);
         }
