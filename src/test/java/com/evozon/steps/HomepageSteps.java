@@ -1,7 +1,5 @@
 package com.evozon.steps;
 
-
-
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 

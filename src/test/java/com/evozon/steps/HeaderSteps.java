@@ -10,7 +10,6 @@ import java.util.List;
 
 public class HeaderSteps extends BaseSteps{
 
-
     @Step
     public void clickOnHomepageLogo(){ headerPage.clickOnHomepageLogo(); }
 

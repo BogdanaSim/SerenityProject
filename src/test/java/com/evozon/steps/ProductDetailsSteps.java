@@ -40,6 +40,4 @@ public class ProductDetailsSteps extends BaseSteps{
         selectFirstAvailableOptionsForProduct();
         clickOnAddToCartButton();
     }
-
-
 }
