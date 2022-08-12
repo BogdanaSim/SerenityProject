@@ -10,6 +10,8 @@ public class CartSteps extends BaseSteps {
 
     private String quantityOfFirstProductInCart;
 
+    private double previousTotalPrice;
+
     public double getPriceOfFirstProductInCart() {
         return cartPage.getPriceOfFirstProductInCart();
     }
@@ -44,5 +46,21 @@ public class CartSteps extends BaseSteps {
     @Step
     public void verifyQuantityWasUpdatedToValue(String value) {
         Assert.assertTrue(quantityOfFirstProductInCart.equalsIgnoreCase(value));
+    }
+
+    @Step
+    public void enterCouponCode(String code){
+        previousTotalPrice=cartPage.getGrandTotalOfCart();
+        cartPage.enterCouponCode(code);
+    }
+
+    @Step
+    public void applyCouponCodeToCart(){
+        cartPage.applyCouponCode();
+    }
+
+    @Step
+    public void checkIfCouponCodeWasAppliedToCart(double percentage){
+        Assert.assertEquals(previousTotalPrice-percentage/100*previousTotalPrice,cartPage.getGrandTotalOfCart(),0.1D);
     }
 }
