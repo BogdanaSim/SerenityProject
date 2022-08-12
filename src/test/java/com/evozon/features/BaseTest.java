@@ -22,7 +22,7 @@ public class BaseTest {
     protected HeaderSteps headerSteps;
 
     @Before
-    public void maximise(){
+    public void maximise() {
         driver.manage().window().maximize();
         driver.get(Constants.BASE_URL);
     }

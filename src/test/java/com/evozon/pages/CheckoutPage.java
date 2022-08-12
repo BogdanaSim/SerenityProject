@@ -2,11 +2,8 @@ package com.evozon.pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 public class CheckoutPage extends PageObject {
 
@@ -46,13 +43,13 @@ public class CheckoutPage extends PageObject {
     @FindBy(css = "#payment-buttons-container > button > span > span")
     private WebElementFacade clickContinuePaymentInformation;
 
-    @FindBy(css= "#review-buttons-container>button")
+    @FindBy(css = "#review-buttons-container>button")
     private WebElementFacade PlaceOrderButton;
 
-    @FindBy(css= "select#billing-address-select")
+    @FindBy(css = "select#billing-address-select")
     private WebElementFacade selectAddress;
 
-   @FindBy(css= ".col-main .sub-title")
+    @FindBy(css = ".col-main .sub-title")
     private WebElementFacade thankYouMessage;
 
 
@@ -94,7 +91,7 @@ public class CheckoutPage extends PageObject {
     }
 
     public void selectFreeShippingMethod() {
-        if(freeShippingMethod.isPresent())
+        if (freeShippingMethod.isPresent())
             clickOn(freeShippingMethod);
     }
 
@@ -102,19 +99,21 @@ public class CheckoutPage extends PageObject {
         clickOn(clickFreeShippingButton);
     }
 
-    public void clickContinuePaymentInformation(){
+    public void clickContinuePaymentInformation() {
         clickOn(clickContinuePaymentInformation);
     }
 
     public void clickPlaceOrderButton() {
-        clickOn(PlaceOrderButton);}
+        clickOn(PlaceOrderButton);
+    }
 
-    public boolean checkExistenceOfDefaultAddress(){
+    public boolean checkExistenceOfDefaultAddress() {
         return selectAddress.isPresent();
     }
 
     public String thankYouMessage() {
-        return thankYouMessage.getText();}
+        return thankYouMessage.getText();
+    }
 
 }
 

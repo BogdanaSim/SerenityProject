@@ -4,7 +4,7 @@ import com.evozon.pages.AccountPage;
 import com.evozon.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
-import org.junit.Test;
+
 
 public class LoginSteps extends BaseSteps {
 

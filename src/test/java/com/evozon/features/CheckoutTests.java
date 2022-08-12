@@ -46,7 +46,7 @@ public class CheckoutTests extends BaseTest {
         checkoutSteps.thankYouMessageConfirmation();
     }
 
-@Ignore
+    @Ignore
     @Test
     public void checkoutFromMiniCart() throws IOException {
         headerSteps.clickOnAccountLink();
@@ -60,8 +60,6 @@ public class CheckoutTests extends BaseTest {
         checkoutSteps.thankYouMessageConfirmation();
 
     }
-
-
 
 
 }

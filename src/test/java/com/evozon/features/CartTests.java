@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/test/resources/csv/categories.csv")
-public class CartTests extends BaseTest{
+public class CartTests extends BaseTest {
 
     @Steps
     private ProductsPageSteps productsPageSteps;
@@ -27,12 +27,12 @@ public class CartTests extends BaseTest{
     @Steps
     private CategorySteps categorySteps;
 
-    public String category, subcategory,quantity;
+    public String category, subcategory, quantity;
 
 
     @Test
     public void addOneProductToCart() {
-        headerSteps.selectSubcategoryFromMainMenu(category,subcategory);
+        headerSteps.selectSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.addProductFromDetailsPage();
         productDetailsSteps.checkIfEqualToPriceOfProductToTheFirstProductInCart();
@@ -43,7 +43,7 @@ public class CartTests extends BaseTest{
     @Test
     public void removeFirstProductInCart() {
 
-        headerSteps.selectSubcategoryFromMainMenu(category,subcategory);
+        headerSteps.selectSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.addProductFromDetailsPage();
         cartSteps.clickOnRemoveButtonOfTheFirstProductInCart();
@@ -54,7 +54,7 @@ public class CartTests extends BaseTest{
 
     @Test
     public void updateQuantityOfFirstProductInCart() {
-        headerSteps.selectSubcategoryFromMainMenu(category,subcategory);
+        headerSteps.selectSubcategoryFromMainMenu(category, subcategory);
         productsPageSteps.clickOnFirstProduct();
         productDetailsSteps.addProductFromDetailsPage();
         cartSteps.updateQuantityOfFirstProductInCart(quantity);

@@ -20,7 +20,6 @@ public class SearchTests extends BaseTest {
 
     @Test
     public void searchTest() throws IOException {
-        homepageSteps.navigateToHomepage();
         withTestDataFrom("src/test/resources/csv/search.csv").run(searchSteps).searchSteps();
 
     }
