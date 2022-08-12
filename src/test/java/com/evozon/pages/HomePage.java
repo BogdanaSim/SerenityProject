@@ -5,21 +5,21 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://qa3magento.dev.evozon.com/")
-public class HomePage  extends PageObject {
+public class HomePage extends PageObject {
 
-    public String getTitleHomePage(){
+    public String getTitleHomePage() {
         return getTitle();
     }
 
-    public void refreshHomePage(){
+    public void refreshHomePage() {
         getDriver().navigate().refresh();
     }
 
-    public void goForward(){
+    public void goForward() {
         getDriver().navigate().forward();
     }
 
-    public void goBackward(){
+    public void goBackward() {
         getDriver().navigate().back();
     }
 }

@@ -7,13 +7,13 @@ public class HomepageSteps extends BaseSteps {
 
 
     @Step
-    public void navigateToHomepage(){
+    public void navigateToHomepage() {
         homePage.open();
     }
 
     @Step
-    public void checkTitleHomePage(){
-        String titleHomePage= homePage.getTitleHomePage();
+    public void checkTitleHomePage() {
+        String titleHomePage = homePage.getTitleHomePage();
         Assert.assertTrue(titleHomePage.equalsIgnoreCase("Madison Island"));
     }
 

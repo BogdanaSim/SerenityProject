@@ -8,7 +8,9 @@ public class AccountPage extends PageObject {
     @FindBy(css = ".welcome-msg strong")
     private WebElementFacade welcomeTextParagraph;
 
-    public String getWelcomeText() { return welcomeTextParagraph.getText();}
+    public String getWelcomeText() {
+        return welcomeTextParagraph.getText();
+    }
 
 
 }
